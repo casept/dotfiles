@@ -1,0 +1,39 @@
+[submodule "vim/.vim/bundle/nerdtree"]
+	path = vim/.vim/bundle/nerdtree
+	url = https://github.com/scrooloose/nerdtree.git
+[submodule "vim/.vim/bundle/rust.vim"]
+	path = vim/.vim/bundle/rust.vim
+	url = https://github.com/rust-lang/rust.vim
+[submodule "vim/.vim/bundle/syntastic"]
+	path = vim/.vim/bundle/syntastic
+	url = https://github.com/vim-syntastic/syntastic
+[submodule "vim/.vim/bundle/vim-alias"]
+	path = vim/.vim/bundle/vim-alias
+	url = https://github.com/Konfekt/vim-alias
+[submodule "vim/.vim/bundle/vim-colors-solarized"]
+	path = vim/.vim/bundle/vim-colors-solarized
+	url = https://github.com/altercation/vim-colors-solarized
+[submodule "vim/.vim/bundle/vim-flake8"]
+	path = vim/.vim/bundle/vim-flake8
+	url = https://github.com/nvie/vim-flake8
+[submodule "vim/.vim/bundle/vim-fugitive"]
+	path = vim/.vim/bundle/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/.vim/bundle/vim-go"]
+	path = vim/.vim/bundle/vim-go
+	url = https://github.com/fatih/vim-go
+[submodule "vim/.vim/bundle/vim-toml"]
+	path = vim/.vim/bundle/vim-toml
+	url = https://github.com/cespare/vim-toml
+[submodule "vim/.vim/bundle/vimux"]
+	path = vim/.vim/bundle/vimux
+	url = https://github.com/benmills/vimux
+[submodule "vim/.vim/bundle/Vundle.vim"]
+	path = vim/.vim/bundle/Vundle.vim
+	url = https://github.com/VundleVim/Vundle.vim
+[submodule "vim/.vim/bundle/YouCompleteMe"]
+	path = vim/.vim/bundle/YouCompleteMe
+	url = https://github.com/Valloric/YouCompleteMe
+[submodule "vim/.vim/bundle/zenburn"]
+	path = vim/.vim/bundle/zenburn
+	url = https://github.com/jnurmine/zenburn
