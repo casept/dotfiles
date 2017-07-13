@@ -52,6 +52,8 @@ set foldlevel=99
 " Use the spacebar to fold 
 nnoremap <space> za
 
+"Ignore E501 (do not complain about long lines in python)
+let g:syntastic_python_flake8_args='--ignore=E501'
 
 "Enable golint to be run using :Lint
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
