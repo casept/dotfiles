@@ -52,17 +52,6 @@ set foldlevel=99
 " Use the spacebar to fold 
 nnoremap <space> za
 
-" Follow PEP8 when editing *.py files
-" Also use it for *.rs files, as those have quite simmilar best practices
-au BufNewFile,BufRead *.py, *.rs
-    \ set tabstop=4
-    \ set softtabstop=4
-    \ set shiftwidth=4
-    \ set textwidth=79
-    \ set expandtab
-    \ set autoindent
-    \ set fileformat=unix
-
 
 "Enable golint to be run using :Lint
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
