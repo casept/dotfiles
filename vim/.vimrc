@@ -27,10 +27,6 @@ Plugin 'rust-lang/rust.vim'
 Plugin 'fatih/vim-go'
 " Syntax highlighting for *.toml files
 Bundle 'cespare/vim-toml' 
-" Zenburn color scheme
-Plugin 'jnurmine/Zenburn'
-" Solarized color scheme
-Plugin 'altercation/vim-colors-solarized'
 " Proper file browser
 Plugin 'scrooloose/nerdtree'
 " Git convenience
@@ -45,6 +41,8 @@ call vundle#end()
 filetype plugin indent on
 "-----------------------------------------------------------
 
+set shortmess=a
+set cmdheight=2
 
 " Enable folding
 set foldmethod=indent
@@ -62,7 +60,7 @@ autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 
 " Set colorscheme
 set background=dark
-colorscheme solarized
+colorscheme monokai
 
 " List of files for NERDTree to ignore
 let NERDTreeIgnore=['\.pyc$', '\~$'] 
@@ -81,3 +79,6 @@ endif
 set number
 highlight LineNr ctermfg=grey
 highlight LineNr guifg=#050505
+
+" Syntax-highlighted search
+set hlsearch
