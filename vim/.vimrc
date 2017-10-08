@@ -19,8 +19,10 @@ Plugin 'VundleVim/Vundle.vim'
 " Add the plugins
 " Syntax checking
 Plugin 'vim-syntastic/syntastic'
-" PEP 8 compliance
+" PEP 8 checker
 Plugin 'nvie/vim-flake8'
+" Automatic PEP8 enforcement 
+Plugin 'tell-k/vim-autopep8'
 " Rust-lang support
 Plugin 'rust-lang/rust.vim'
 " golang support
@@ -52,6 +54,14 @@ nnoremap <space> za
 
 "Ignore E501 (do not complain about long lines in python)
 let g:syntastic_python_flake8_args='--ignore=E501'
+let g:autopep8_ignore='E501'
+
+"Automatically run autopep8
+autocmd BufWritePost,FileWritePost *.py :call Autopep8() | cwindow
+" autopep8 on pressing <F8>
+autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
+" Disable diff view for autopep8
+let g:autopep8_disable_show_diff=1
 
 "Enable golint to be run using :Lint
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
@@ -82,3 +92,9 @@ highlight LineNr guifg=#050505
 
 " Syntax-highlighted search
 set hlsearch
+
+" Enable autoindent
+set autoindent
+
+" Toggle paste mode with <F5>
+set pastetoggle=<F5>
