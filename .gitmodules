@@ -40,3 +40,6 @@
 [submodule "vim/.vim/bundle/neocomplete.vim"]
 	path = vim/.vim/bundle/neocomplete.vim
 	url = https://github.com/Shougo/neocomplete.vim
+[submodule "vim/.vim/bundle/auto-pairs"]
+	path = vim/.vim/bundle/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
