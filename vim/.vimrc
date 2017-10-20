@@ -38,7 +38,9 @@ Plugin 'benmills/vimux'
 " Proper aliases
 Plugin 'Konfekt/vim-alias'
 " Autocompletion                                                                                                     
-Plugin 'Valloric/YouCompleteMe'
+Plugin 'Shougo/neocomplete.vim'
+
+Plugin 'jiangmiao/auto-pairs'
 call vundle#end()
 filetype plugin indent on
 "-----------------------------------------------------------
@@ -98,3 +100,35 @@ set autoindent
 
 " Toggle paste mode with <F5>
 set pastetoggle=<F5>
+
+" Neocomplete config
+ let g:acp_enableAtStartup = 0
+ let g:neocomplete#enable_at_startup = 1
+ let g:neocomplete#enable_smart_case = 1
+ let g:neocomplete#sources#syntax#min_keyword_length = 3
+ 
+ " Plugin key-mappings.
+ inoremap <expr><C-g>     neocomplete#undo_completion()
+ inoremap <expr><C-l>     neocomplete#complete_common_string()
+ 
+ " Recommended key-mappings.
+ " <CR>: close popup and save indent.
+ inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+ function! s:my_cr_function()
+     return neocomplete#close_popup() . "\<CR>"
+ endfunction
+ " <TAB>: completion.
+ inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+ " <C-h>, <BS>: close popup and delete backword char.
+ inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+ inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+ inoremap <expr><C-y>  neocomplete#close_popup()
+ inoremap <expr><C-e>  neocomplete#cancel_popup()
+ 
+ " Go related mappings
+ au FileType go nmap <Leader>i <Plug>(go-info)
+ au FileType go nmap <Leader>gd <Plug>(go-doc)
+ au FileType go nmap <Leader>r <Plug>(go-run)
+ au FileType go nmap <Leader>b <Plug>(go-build)
+ au FileType go nmap <Leader>t <Plug>(go-test)
+ au FileType go nmap gd <Plug>(go-def-tab)

@@ -37,3 +37,6 @@
 [submodule "vim/.vim/bundle/zenburn"]
 	path = vim/.vim/bundle/zenburn
 	url = https://github.com/jnurmine/zenburn
+[submodule "vim/.vim/bundle/neocomplete.vim"]
+	path = vim/.vim/bundle/neocomplete.vim
+	url = https://github.com/Shougo/neocomplete.vim
