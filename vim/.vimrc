@@ -101,6 +101,7 @@ set autoindent
 " Toggle paste mode with <F5>
 set pastetoggle=<F5>
 
+"""
 " Neocomplete config
  let g:acp_enableAtStartup = 0
  let g:neocomplete#enable_at_startup = 1
@@ -132,3 +133,13 @@ set pastetoggle=<F5>
  au FileType go nmap <Leader>b <Plug>(go-build)
  au FileType go nmap <Leader>t <Plug>(go-test)
  au FileType go nmap gd <Plug>(go-def-tab)
+ " End of neocomplete config
+ """
+
+ " Highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
