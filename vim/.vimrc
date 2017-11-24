@@ -1,7 +1,7 @@
 "Enable syntax highlighting
 syntax on
 
-" Disable legacy vi compatibility 
+" Disable legacy vi compatibility
 set nocompatible
 
 " Always use UTF-8
@@ -10,40 +10,7 @@ set encoding=utf-8
 " Enable 256 color support
 set t_Co=256
 
-"-----------------Set up vundle-----------------------------
-filetype off                  " required
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-Plugin 'VundleVim/Vundle.vim'
-
-" Add the plugins
-" Syntax checking
-Plugin 'vim-syntastic/syntastic'
-" PEP 8 checker
-Plugin 'nvie/vim-flake8'
-" Automatic PEP8 enforcement 
-Plugin 'tell-k/vim-autopep8'
-" Rust-lang support
-Plugin 'rust-lang/rust.vim'
-" golang support
-Plugin 'fatih/vim-go'
-" Syntax highlighting for *.toml files
-Bundle 'cespare/vim-toml' 
-" Proper file browser
-Plugin 'scrooloose/nerdtree'
-" Git convenience
-Plugin 'tpope/vim-fugitive'
-" Tmux integration
-Plugin 'benmills/vimux'
-" Proper aliases
-Plugin 'Konfekt/vim-alias'
-" Autocompletion                                                                                                     
-Plugin 'Shougo/neocomplete.vim'
-
-Plugin 'jiangmiao/auto-pairs'
-call vundle#end()
 filetype plugin indent on
-"-----------------------------------------------------------
 
 set shortmess=a
 set cmdheight=2
@@ -51,7 +18,7 @@ set cmdheight=2
 " Enable folding
 set foldmethod=indent
 set foldlevel=99
-" Use the spacebar to fold 
+" Use the spacebar to fold
 nnoremap <space> za
 
 "Ignore E501 (do not complain about long lines in python)
@@ -75,7 +42,7 @@ set background=dark
 colorscheme monokai
 
 " List of files for NERDTree to ignore
-let NERDTreeIgnore=['\.pyc$', '\~$'] 
+let NERDTreeIgnore=['\.pyc$', '\~$']
 
 " Load vim-alias aliases from ~/.vim/aliases.vimrc
 if exists('s:loaded_vimafter')

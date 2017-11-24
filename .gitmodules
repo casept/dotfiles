@@ -43,3 +43,45 @@
 [submodule "vim/.vim/bundle/auto-pairs"]
 	path = vim/.vim/bundle/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
+[submodule "vim/.vim/bundle/traces.vim"]
+	path = vim/.vim/bundle/traces.vim
+	url = https://github.com/xtal8/traces.vim
+[submodule "vim/.vim/pack/casept/start/nerdtree"]
+	path = vim/.vim/pack/casept/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "vim/.vim/pack/casept/start/neocomplete.vim"]
+	path = vim/.vim/pack/casept/start/neocomplete.vim
+	url = https://github.com/Shougo/neocomplete.vim
+[submodule "vim/.vim/pack/casept/start/rust.vim"]
+	path = vim/.vim/pack/casept/start/rust.vim
+	url = https://github.com/rust-lang/rust.vim
+[submodule "vim/.vim/pack/casept/start/auto-pairs"]
+	path = vim/.vim/pack/casept/start/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
+[submodule "vim/.vim/pack/casept/start/syntastic"]
+	path = vim/.vim/pack/casept/start/syntastic
+	url = https://github.com/vim-syntastic/syntastic
+[submodule "vim/.vim/pack/casept/start/traces.vim"]
+	path = vim/.vim/pack/casept/start/traces.vim
+	url = https://github.com/xtal8/traces.vim
+[submodule "vim/.vim/pack/casept/start/vim-alias"]
+	path = vim/.vim/pack/casept/start/vim-alias
+	url = https://github.com/Konfekt/vim-alias
+[submodule "vim/.vim/pack/casept/start/vim-autopep8"]
+	path = vim/.vim/pack/casept/start/vim-autopep8
+	url = https://github.com/tell-k/vim-autopep8
+[submodule "vim/.vim/pack/casept/start/vim-flake8"]
+	path = vim/.vim/pack/casept/start/vim-flake8
+	url = https://github.com/nvie/vim-flake8
+[submodule "vim/.vim/pack/casept/start/vim-fugitive"]
+	path = vim/.vim/pack/casept/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/.vim/pack/casept/start/vim-go"]
+	path = vim/.vim/pack/casept/start/vim-go
+	url = https://github.com/fatih/vim-go
+[submodule "vim/.vim/pack/casept/start/vim-toml"]
+	path = vim/.vim/pack/casept/start/vim-toml
+	url = https://github.com/cespare/vim-toml
+[submodule "vim/.vim/pack/casept/start/vimux"]
+	path = vim/.vim/pack/casept/start/vimux
+	url = https://github.com/benmills/vimux
