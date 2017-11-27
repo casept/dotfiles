@@ -58,9 +58,6 @@
 [submodule "vim/.vim/pack/casept/start/auto-pairs"]
 	path = vim/.vim/pack/casept/start/auto-pairs
 	url = https://github.com/jiangmiao/auto-pairs
-[submodule "vim/.vim/pack/casept/start/syntastic"]
-	path = vim/.vim/pack/casept/start/syntastic
-	url = https://github.com/vim-syntastic/syntastic
 [submodule "vim/.vim/pack/casept/start/traces.vim"]
 	path = vim/.vim/pack/casept/start/traces.vim
 	url = https://github.com/xtal8/traces.vim
@@ -85,3 +82,6 @@
 [submodule "vim/.vim/pack/casept/start/vimux"]
 	path = vim/.vim/pack/casept/start/vimux
 	url = https://github.com/benmills/vimux
+[submodule "vim/.vim/pack/casept/start/ale"]
+	path = vim/.vim/pack/casept/start/ale
+	url = https://github.com/w0rp/ale.git
