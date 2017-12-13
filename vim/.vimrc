@@ -68,8 +68,7 @@ set autoindent
 " Toggle paste mode with <F5>
 set pastetoggle=<F5>
 
-"""
-" Neocomplete config
+""" Neocomplete config
  let g:acp_enableAtStartup = 0
  let g:neocomplete#enable_at_startup = 1
  let g:neocomplete#enable_smart_case = 1
@@ -100,19 +99,42 @@ set pastetoggle=<F5>
  au FileType go nmap <Leader>b <Plug>(go-build)
  au FileType go nmap <Leader>t <Plug>(go-test)
  au FileType go nmap gd <Plug>(go-def-tab)
- " End of neocomplete config
- """
+""" End of neocomplete config
 
- " Highlight trailing whitespace
+
+""" Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
 match ExtraWhitespace /\s\+$/
 autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
 autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
 autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
+"""
 
-" Tab configuration
+
+""" Tab configuration
 " show existing tab with 4 spaces width
 set tabstop=4
 " when indenting with '>', use 4 spaces width
 set shiftwidth=4
+"""
+
+
+""" Split control/window stuff
+" Remap window switching keys to CTRL + <hjkl>
+map <c-j> <c-w>j
+map <c-k> <c-w>k
+map <c-h> <c-w>h
+map <c-l> <c-w>l
+
+" Automatically maximize the newly focused window when using CTRL + <hhjjkkll> to switch
+" TODO: Find a way to do this using capital letters instead
+map <c-j-j> <c-w>j<c-w>_
+map <c-k-k> <c-w>k<c-w>_
+map <c-h-h> <c-w>h<c-w>_
+map <c-l-l> <c-w>l<c-w>_
+
+" Allow for 0-height windows to save space by only displaying the filename
+" instead of filename + current line
+set wmh=0
+"""
