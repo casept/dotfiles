@@ -32,19 +32,27 @@ autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
 " Disable diff view for autopep8
 let g:autopep8_disable_show_diff=1
 
+""" Golang configuration
 "Enable golint to be run using :Lint
 set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 "Automatically run golint on :w
 autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
+" Set vim-go to run goimports on save
+let g:go_fmt_command = "goimports"
+"""
 
-" Set colorscheme
+
+""" Colorscheme configuration
 set background=dark
 colorscheme monokai
+"""
 
+""" NERDTree configuration
 " List of files for NERDTree to ignore
 let NERDTreeIgnore=['\.pyc$', '\~$']
+"""
 
-" Load vim-alias aliases from ~/.vim/aliases.vimrc
+""" Load vim-alias aliases from ~/.vim/aliases.vimrc
 if exists('s:loaded_vimafter')
 	silent doautocmd VimAfter VimEnter *
 else
@@ -53,52 +61,61 @@ else
 	autocmd VimEnter * source ~/.vim/aliases.vimrc
 	augroup END
 endif
+"""
 
-" Enable line numbering and change color of LN
+
+""" Enable line numbering and change color of LN
 set number
 highlight LineNr ctermfg=grey
 highlight LineNr guifg=#050505
+"""
 
-" Syntax-highlighted search
+""" Syntax-highlighted search
 set hlsearch
+"""
 
-" Enable autoindent
+
+""" Enable autoindent
 set autoindent
+"""
 
-" Toggle paste mode with <F5>
+
+""" Toggle paste mode with <F5>
 set pastetoggle=<F5>
+"""
 
-""" Neocomplete config
- let g:acp_enableAtStartup = 0
- let g:neocomplete#enable_at_startup = 1
- let g:neocomplete#enable_smart_case = 1
- let g:neocomplete#sources#syntax#min_keyword_length = 3
 
- " Plugin key-mappings.
- inoremap <expr><C-g>     neocomplete#undo_completion()
- inoremap <expr><C-l>     neocomplete#complete_common_string()
+"" Neocomplete config
+let g:acp_enableAtStartup = 0
+let g:neocomplete#enable_at_startup = 1
+let g:neocomplete#enable_smart_case = 1
+let g:neocomplete#sources#syntax#min_keyword_length = 3
 
- " Recommended key-mappings.
- " <CR>: close popup and save indent.
- inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
- function! s:my_cr_function()
-     return neocomplete#close_popup() . "\<CR>"
- endfunction
- " <TAB>: completion.
- inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
- " <C-h>, <BS>: close popup and delete backword char.
- inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
- inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
- inoremap <expr><C-y>  neocomplete#close_popup()
- inoremap <expr><C-e>  neocomplete#cancel_popup()
+" Plugin key-mappings.
+inoremap <expr><C-g>     neocomplete#undo_completion()
+inoremap <expr><C-l>     neocomplete#complete_common_string()
 
- " Go related mappings
- au FileType go nmap <Leader>i <Plug>(go-info)
- au FileType go nmap <Leader>gd <Plug>(go-doc)
- au FileType go nmap <Leader>r <Plug>(go-run)
- au FileType go nmap <Leader>b <Plug>(go-build)
- au FileType go nmap <Leader>t <Plug>(go-test)
- au FileType go nmap gd <Plug>(go-def-tab)
+" Recommended key-mappings.
+" <CR>: close popup and save indent.
+inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
+function! s:my_cr_function()
+    return neocomplete#close_popup() . "\<CR>"
+endfunction
+" <TAB>: completion.
+inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><BS> neocomplete#smart_close_popup()."\<C-h>"
+inoremap <expr><C-y>  neocomplete#close_popup()
+inoremap <expr><C-e>  neocomplete#cancel_popup()
+
+" Go related mappings
+au FileType go nmap <Leader>i <Plug>(go-info)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>r <Plug>(go-run)
+au FileType go nmap <Leader>b <Plug>(go-build)
+au FileType go nmap <Leader>t <Plug>(go-test)
+au FileType go nmap gd <Plug>(go-def-tab)
 """ End of neocomplete config
 
 
