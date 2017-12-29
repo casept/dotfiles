@@ -1,0 +1,7 @@
+# Fix a messed-up tmux window
+# https://unix.stackexchange.com/questions/49886/tmux-status-bar-corrupted-after-catting-a-binary-file-how-to-reset
+reset
+stty sane
+printf '\033k%s\033\\\033]2;%s\007' "$(basename "$SHELL")" "$(uname -n)"
+tput reset
+tmux refresh
