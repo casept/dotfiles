@@ -2,19 +2,17 @@
 # see /usr/share/doc/bash/examples/startup-files (in the package bash-doc)
 # for examples
 
-#start tmux
-# TMUX
-if which tmux >/dev/null 2>&1; then
-    #if not inside a tmux session, and if no session is started, start a new session
-    test -z "$TMUX" && (tmux attach || tmux new-session)
-fi
-
-
 # If not running interactively, don't do anything
 case $- in
     *i*) ;;
       *) return;;
 esac
+
+#start tmux
+if which tmux >/dev/null 2>&1; then
+    #if not inside a tmux session, and if no session is started, start a new session
+    test -z "$TMUX" && (tmux attach || tmux new-session)
+fi
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
@@ -122,7 +120,8 @@ if ! shopt -oq posix; then
   fi
 fi
 
-
+# Enable fzf settings if found
+[ -f ~/.fzf.bash  ] && source ~/.fzf.bash
 
 #define environmental vars
 export GOPATH=$HOME/go
