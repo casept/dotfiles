@@ -125,4 +125,4 @@ fi
 
 #define environmental vars
 export GOPATH=$HOME/go
-export PATH=$PATH:$HOME/bin:$HOME/.cargo/bin:$HOME/go/bin
+export PATH=$PATH:$HOME/usr/bin:$HOME/.cargo/bin:$HOME/go/bin
