@@ -1,0 +1,6 @@
+# Enter the termux chroot if not already running in it
+# This way issues with shebangs and hardcoded paths are bypassed.
+# The /bin directory normally doesn't exist on android, it's presence means we're already running in a termux proot.
+if [ ! -f /bin/sh ] && [ $(which termux-chroot) != "" ]; then
+	termux-chroot
+fi

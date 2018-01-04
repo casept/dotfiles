@@ -8,6 +8,13 @@ case $- in
       *) return;;
 esac
 
+
+# Load additional termux rc file if found to be running in termux
+#TODO: find a better check
+if [ -d /data/data/com.termux ] && [ $(which termux-wake-lock) != "" ]; then
+	source ~/.bashrc_termux
+fi
+
 #start tmux
 if which tmux >/dev/null 2>&1; then
     #if not inside a tmux session, and if no session is started, start a new session
