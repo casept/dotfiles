@@ -136,21 +136,6 @@ set tabstop=4
 set shiftwidth=4
 """
 
-
-""" Split control/window stuff
-" Remap window switching keys to CTRL + <hjkl>
-map <c-j> <c-w>j
-map <c-k> <c-w>k
-map <c-h> <c-w>h
-map <c-l> <c-w>l
-
-" Automatically maximize the newly focused window when using CTRL + <hhjjkkll> to switch
-" TODO: Find a way to do this using capital letters instead
-map <c-j-j> <c-w>j<c-w>_
-map <c-k-k> <c-w>k<c-w>_
-map <c-h-h> <c-w>h<c-w>_
-map <c-l-l> <c-w>l<c-w>_
-
 " Allow for 0-height windows to save space by only displaying the filename
 " instead of filename + current line
 set wmh=0

@@ -85,3 +85,6 @@
 [submodule "vim/.vim/pack/casept/start/ale"]
 	path = vim/.vim/pack/casept/start/ale
 	url = https://github.com/w0rp/ale.git
+[submodule "vim/.vim/pack/casept/start/vim-tmux-navigator"]
+	path = vim/.vim/pack/casept/start/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator
