@@ -140,3 +140,8 @@ set shiftwidth=4
 " instead of filename + current line
 set wmh=0
 """
+
+""" Split config
+" Open splits below/to the right of current buffer (as in tmux)
+set splitbelow
+set splitright
