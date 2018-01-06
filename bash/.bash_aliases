@@ -1,0 +1,3 @@
+# Make aliases
+# Apparently "mt" would conflict with a command for managing tape drives...
+alias tt="make test"
