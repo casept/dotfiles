@@ -179,6 +179,8 @@ bindsym $mod+F3 exec --no-startup-id rhythmbox
 bindsym $mod+F4 exec --no-startup-id nautilus
 # Password manager
 bindsym $mod+F5 exec --no-startup-id keepassxc
+# Thunderbird
+bindsym $mod+F6 exec --no-startup-id thunderbird
 
 # Screen locker
 bindsym $mod+o exec --no-startup-id i3lock -i ~/Pictures/wallpapers/IBM.png
