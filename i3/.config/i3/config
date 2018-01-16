@@ -177,6 +177,9 @@ bindsym $mod+F2 exec --no-startup-id firefox-trunk
 bindsym $mod+F3 exec --no-startup-id rhythmbox
 # Graphical file manager
 bindsym $mod+F4 exec --no-startup-id nautilus
+# Password manager
+bindsym $mod+F5 exec --no-startup-id keepassxc
+
 # Screen locker
 bindsym $mod+o exec --no-startup-id i3lock -i ~/Pictures/wallpapers/IBM.png
 # Screenshot tool
