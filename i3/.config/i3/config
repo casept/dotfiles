@@ -163,7 +163,10 @@ exec --no-startup-id nm-applet
 exec --no-startup-id blueman-applet
 # Start the screen locker
 exec --no-startup-id xautolock -time 5 -locker "i3lock -i ~/Pictures/wallpapers/IBM.png"
-
+# Start redshift
+exec --no-startup-id redshift-gtk
+# Start syncthing
+exec --no-startup-id syncthing -no-console -no-browser
 
 # Launch commonly-used programs
 # Terminal emu
