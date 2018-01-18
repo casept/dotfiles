@@ -176,7 +176,7 @@ bindsym $mod+F2 exec --no-startup-id firefox-trunk
 # Music player
 bindsym $mod+F3 exec --no-startup-id rhythmbox
 # Graphical file manager
-bindsym $mod+F4 exec --no-startup-id nautilus
+bindsym $mod+F4 exec --no-startup-id thunar
 # Password manager
 bindsym $mod+F5 exec --no-startup-id keepassxc
 # Thunderbird
