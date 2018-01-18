@@ -22,7 +22,6 @@ set foldlevel=99
 nnoremap <space> za
 
 "Ignore E501 (do not complain about long lines in python)
-let g:syntastic_python_flake8_args='--ignore=E501'
 let g:autopep8_ignore='E501'
 
 "Automatically run autopep8
