@@ -181,6 +181,8 @@ bindsym $mod+F4 exec --no-startup-id thunar
 bindsym $mod+F5 exec --no-startup-id keepassxc
 # Thunderbird
 bindsym $mod+F6 exec --no-startup-id thunderbird
+# Zim wiki
+bindsym $mod+F7 exec --no-startup-id zim
 
 # Screen locker
 bindsym $mod+o exec --no-startup-id i3lock -i ~/Pictures/wallpapers/IBM.png
