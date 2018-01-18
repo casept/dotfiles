@@ -38,6 +38,10 @@ set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
 autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
 " Set vim-go to run goimports on save
 let g:go_fmt_command = "goimports"
+" Run gometalinter on save
+let g:ale_linters = {'go': ['gometalinter']}
+" Enable several additional linters for gometalinter
+let g:go_gometalinter_options = "--enable=misspell --enable=unparam --enable=unused --enable=safesql --enable=staticcheck"
 """
 
 
