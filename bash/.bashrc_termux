@@ -4,3 +4,9 @@
 if [ ! -f /bin/sh ] && [ $(which termux-chroot) != "" ]; then
 	termux-chroot
 fi
+
+# Setup PA
+export PULSE_SERVER=tcp::4712
+
+# Setup X11 (xephyr repo)
+export DISPLAY=:0
