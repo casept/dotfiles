@@ -190,7 +190,8 @@ bindsym $mod+o exec --no-startup-id i3lock -i ~/Pictures/wallpapers/IBM.png
 bindsym Print exec "scrot -e 'mv $f ~/Pictures/Screenshots'"
 bindsym $mod+Print exec "scrot -ue 'mv $f ~/Pictures/Screenshots'"
 
-
+# Switch display modes using a script
+bindsym $mod+Shift+s exec --no-startup-id ~/bin/i3mon
 # Window borders
 new_window pixel 2
 hide_edge_borders both

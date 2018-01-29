@@ -1,0 +1,35 @@
+#!/bin/bash
+# Taken from https://faq.i3wm.org/question/5312/how-to-toggle-onoff-external-and-internal-monitors.1.html
+# This script switches through xrandr configs in the following order:
+# 1: internal off, external on
+# 2: internal on, external off
+# 3: external displays copy of internal
+# 4: internal displays different workspaces than external
+
+EXTERNAL_OUTPUT="VGA-1"
+INTERNAL_OUTPUT="LVDS-1"
+MONITOR_MODE_FILE="$HOME/.i3-monmode"
+
+# if we don't have a file, start at zero
+if [ ! -f "$MONITOR_MODE_FILE" ] ; then
+  monitor_mode="all"
+
+# otherwise read the value from the file
+else
+	monitor_mode=$(cat "$MONITOR_MODE_FILE")
+fi
+
+if [ "$monitor_mode" = "all" ]; then
+        monitor_mode="EXTERNAL"
+        xrandr --output $INTERNAL_OUTPUT --off --output $EXTERNAL_OUTPUT --auto
+elif [ $monitor_mode = "EXTERNAL" ]; then
+        monitor_mode="INTERNAL"
+        xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --off
+elif [ $monitor_mode = "INTERNAL" ]; then
+        monitor_mode="CLONES"
+        xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --auto --same-as $INTERNAL_OUTPUT
+else
+        monitor_mode="all"
+        xrandr --output $INTERNAL_OUTPUT --auto --output $EXTERNAL_OUTPUT --auto --left-of $INTERNAL_OUTPUT
+fi
+echo "${monitor_mode}" > "$MONITOR_MODE_FILE"
