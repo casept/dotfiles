@@ -183,6 +183,8 @@ bindsym $mod+F5 exec --no-startup-id keepassxc
 bindsym $mod+F6 exec --no-startup-id thunderbird
 # Zim wiki
 bindsym $mod+F7 exec --no-startup-id zim
+# Visual studio code
+bindsym $mod+F8 exec --no-startup-id code
 
 # Screen locker
 bindsym $mod+o exec --no-startup-id i3lock -i ~/Pictures/wallpapers/IBM.png
