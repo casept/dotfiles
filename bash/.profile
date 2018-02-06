@@ -16,6 +16,9 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
+# Start gpg-agent
+eval $(gpg-agent --daemon)
+
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$PATH:$HOME/bin"
