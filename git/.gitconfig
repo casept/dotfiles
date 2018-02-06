@@ -1,6 +1,7 @@
 [user]
 	email = davids.paskevics@gmail.com
 	name = casept
+	signingkey = 9C384ABC
 [push]
 	default = simple
 [color]
@@ -9,3 +10,4 @@
 	autosetuprebase = always
 [commit]
 	template = ~/.gitmessage
+	gpgsign = true
