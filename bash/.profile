@@ -17,7 +17,9 @@ if [ -n "$BASH_VERSION" ]; then
 fi
 
 # Start gpg-agent
-eval $(gpg-agent --daemon)
+if ! pgrep gpg-agent >/dev/null 2>&1; then
+	eval $(gpg-agent --daemon)
+fi
 
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
