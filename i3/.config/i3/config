@@ -166,7 +166,7 @@ exec --no-startup-id xautolock -time 5 -locker "i3lock -i ~/Pictures/wallpapers/
 # Start redshift
 exec --no-startup-id redshift-gtk
 # Start syncthing
-exec --no-startup-id syncthing -no-console -no-browser
+exec --no-startup-id syncthing -no-browser
 
 # Launch commonly-used programs
 # Terminal emu
