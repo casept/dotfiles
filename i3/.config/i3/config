@@ -187,7 +187,7 @@ bindsym $mod+F7 exec --no-startup-id zim
 bindsym $mod+F8 exec --no-startup-id code
 
 # Screen locker
-bindsym $mod+o exec --no-startup-id i3lock -i ~/Pictures/wallpapers/IBM.png
+bindsym $mod+q exec --no-startup-id i3lock -i ~/Pictures/wallpapers/IBM.png
 # Screenshot tool
 bindsym Print exec "scrot -e 'mv $f ~/Pictures/Screenshots'"
 bindsym $mod+Print exec "scrot -ue 'mv $f ~/Pictures/Screenshots'"
@@ -213,3 +213,7 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+bindsym $mod+o exec playerctl play
+bindsym $mod+p exec playerctl pause
+bindsym $mod+bracketleft exec playerctl previous
+bindsym $mod+bracketright exec playerctl next
