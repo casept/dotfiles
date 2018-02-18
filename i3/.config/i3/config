@@ -174,7 +174,7 @@ bindsym $mod+F1 exec --no-startup-id i3-sensible-terminal
 # Firefox
 bindsym $mod+F2 exec --no-startup-id firefox-trunk
 # Music player
-bindsym $mod+F3 exec --no-startup-id rhythmbox
+bindsym $mod+F3 exec --no-startup-id x-terminal-emulator -e cmus
 # Graphical file manager
 bindsym $mod+F4 exec --no-startup-id thunar
 # Password manager
