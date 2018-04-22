@@ -22,8 +22,8 @@ set foldlevel=99
 nnoremap <space> za
 
 "Ignore E501 (do not complain about long lines in python)
-let g:autopep8_ignore='E501'
-
+let g:ale_python_autopep8_options="--ignore=E501"
+let g:ale_python_flake8_options="--ignore=E501,E225"
 "Automatically run autopep8
 autocmd BufWritePost,FileWritePost *.py :call Autopep8() | cwindow
 " autopep8 on pressing <F8>
