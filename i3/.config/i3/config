@@ -169,6 +169,8 @@ exec --no-startup-id redshift-gtk
 exec --no-startup-id syncthing -no-browser
 # Start caffeine
 exec --no-startup-id caffeine
+# Start get off the PC
+exec --no-startup-id ~/bin/get_off_the_PC --hour 22 --minute 30
 
 # Launch commonly-used programs
 # Terminal emu
