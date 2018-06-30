@@ -1,0 +1,1 @@
+This file is here so that the install script can determine whether it's run from the corrent directory.
