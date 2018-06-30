@@ -95,7 +95,7 @@ def unstow(directory):
 def check_if_dotfile_directory():
     """
     Checks whether the script is running from the dotfiles directory
-    to prevent issues with wrong paths due to invoking from the wrong directory.
+    to prevent issues with wrong paths caused by invoking from the wrong directory.
     """
     if not os.path.exists(os.path.join(os.getcwd(), ".dotfiledir")):
         print("Please invoke this script from the dotfiles directory!")
@@ -115,6 +115,7 @@ def main():
         print("Files changed")
     else:
         print("No files changed")
+
 
 if __name__ == "__main__":
     main()
