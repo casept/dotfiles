@@ -4,12 +4,15 @@ This script is a wrapper for GNU stow.
 It unstows all directories into $HOME while force-overwriting any files (a feature that stow lacks).
 It reports whether any files have changed.
 """
+
+# Python 2 compat stuff
+from __future__ import (division, print_function, absolute_import,
+                        unicode_literals)
 import os
 import sys
 import shutil
 import subprocess
 import re
-
 
 def get_packages(directory):
     """
