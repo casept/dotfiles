@@ -15,12 +15,6 @@ if [ -d /data/data/com.termux ] && [ $(which termux-wake-lock) != "" ]; then
 	source ~/.bashrc_termux
 fi
 
-#start tmux
-if which tmux >/dev/null 2>&1; then
-    #if not inside a tmux session, and if no session is started, start a new session
-    test -z "$TMUX" && (tmux attach || tmux new-session)
-fi
-
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
