@@ -9,12 +9,6 @@ case $- in
 esac
 
 
-# Load additional termux rc file if found to be running in termux
-#TODO: find a better check
-if [ -d /data/data/com.termux ] && [ $(which termux-wake-lock) != "" ]; then
-	source ~/.bashrc_termux
-fi
-
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -127,3 +121,11 @@ fi
 #define environmental vars
 export GOPATH=$HOME/go
 export PATH=$PATH:$HOME/usr/bin:$HOME/.cargo/bin:$HOME/go/bin
+
+
+# Load additional termux rc file if found to be running in termux
+# It's important to do this last, as some settings from ~/.bashrc are overriden.
+#TODO: find a better check
+if [ -d /data/data/com.termux ] && [ $(which termux-wake-lock) != "" ]; then
+	source ~/.bashrc_termux
+fi

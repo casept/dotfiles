@@ -10,3 +10,8 @@ export PULSE_SERVER=tcp::4712
 
 # Setup X11 (xephyr repo)
 export DISPLAY=:0
+
+# Override the bash prompt so it doesn't display the username/hostname
+# The username is the sequentially named user assigned to termux by android, and the host is always "localhost"
+# Therefore both of these are meaningless and only waste screen space.
+PS1="\[\033[01;34m\]\w\[\033[00m\]\$ "
