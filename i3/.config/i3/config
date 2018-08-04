@@ -171,6 +171,8 @@ exec --no-startup-id syncthing -no-browser
 exec --no-startup-id caffeine
 # Start get off the PC
 exec --no-startup-id ~/bin/get_off_the_PC --hour 22 --minute 30
+# Start polkitd
+exec --no-startup-id lxpolkit
 
 # Launch commonly-used programs
 # Terminal emu
