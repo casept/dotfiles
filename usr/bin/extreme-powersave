@@ -1,0 +1,4 @@
+#!/bin/sh
+# This script stops many non-crucial services to eek out a bit more battery life.
+sudo systemctl stop docker
+sudo systemctl stop lxd
