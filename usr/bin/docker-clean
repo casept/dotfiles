@@ -1,0 +1,11 @@
+#!/bin/sh
+# Remove all containers
+for container in $(sudo docker container ls -a -q)
+do
+	sudo docker container rm $container
+done
+# Remove all images
+for image in $(sudo docker image ls -a -q)
+do
+	sudo docker image rm $image
+done
