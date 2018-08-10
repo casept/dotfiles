@@ -2,9 +2,15 @@
 # Apparently "mt" would conflict with a command for managing tape drives...
 alias tt="make test |& less"
 
+# Define an alias for changing the colorscheme of the linux TTY if found to be running in one.
+if tty | grep tty>/dev/null 2>&1; then
+	~/bin/linux-tty-color
+	# Also alias reset to a variant that automatically reapplies the colorscheme if run,
+	# otherwise reset would wipe it.
+	alias reset="reset && ~/bin/linux-tty-color"
+fi
 
 # Tmux aliases
-
 #start tmux
 #if not inside a tmux session, and if no session is started, start a new session
 alias st=runtmux
