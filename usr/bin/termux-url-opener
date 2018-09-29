@@ -1,0 +1,3 @@
+#!/data/data/com.termux/files/usr/bin/bash
+cd ~/storage/movies
+youtube-dl $1
