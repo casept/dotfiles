@@ -8,6 +8,17 @@ case $- in
       *) return;;
 esac
 
+# If running in a non-unicode locale (which breaks many programs), try forcing it.
+if ! locale | grep "LANG=" | grep UTF-8; then
+	export LANG=C.UTF-8
+fi
+if ! locale | grep "LC_ALL=" | grep UTF-8; then
+	export LC_ALL=C.UTF-8
+fi
+if ! locale | grep "LANGUAGE=" | grep UTF-8; then
+	export LANGUAGE=C.UTF-8
+fi
+
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
