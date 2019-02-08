@@ -131,7 +131,8 @@ fi
 
 #define environmental vars
 export GOPATH=$HOME/go
-export PATH=$PATH:$HOME/usr/bin:$HOME/.cargo/bin:$HOME/go/bin
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH:$HOME/usr/bin:$HOME/.cargo/bin:$GOPATH/bin"
 
 
 # Load additional termux rc file if found to be running in termux
@@ -139,4 +140,9 @@ export PATH=$PATH:$HOME/usr/bin:$HOME/.cargo/bin:$HOME/go/bin
 #TODO: find a better check
 if [ -d /data/data/com.termux ] && [ $(which termux-wake-lock) != "" ]; then
 	source ~/.bashrc_termux
+fi
+
+# Prepare pyenv if installed
+if [ -x "$(command -v pyenv)" ]; then
+	eval "$(pyenv init -)"
 fi
