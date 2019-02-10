@@ -158,7 +158,9 @@ bar {
 # Set the wallpaper
 exec --no-startup-id ~/.fehbg
 # Start networkmanager
-exec --no-startup-id nm-applet
+exec --no-startup-id nm-applet\
+# Start pulseaudio
+exec --no-startup-id start-pulseaudio-x11
 # Start blueman
 exec --no-startup-id blueman-applet
 # Start the screen locker
