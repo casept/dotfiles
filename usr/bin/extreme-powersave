@@ -1,7 +1,11 @@
 #!/bin/sh
 # This script stops many non-crucial services to eek out a bit more battery life.
 sudo systemctl stop docker
-sudo systemctl stop lxd
+sudo systemctl stop snap.lxd.daemon
+sudo systemctl stop snap.multipass.multipassd
+sudo systemctl stop lbvirtd
+sudo systemctl stop tor
+killall syncthing
 
 # Stop bluetooth (on by default on system boot)
 rfkill block bluetooth
