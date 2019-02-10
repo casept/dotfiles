@@ -132,7 +132,7 @@ fi
 #define environmental vars
 export GOPATH=$HOME/go
 export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH:$HOME/usr/bin:$HOME/.cargo/bin:$GOPATH/bin:.local/bin/"
+export PATH="$PYENV_ROOT/bin:$PATH:$HOME/usr/bin:$HOME/.cargo/bin:$GOPATH/bin:$HOME/.local/bin/"
 
 
 # Load additional termux rc file if found to be running in termux
