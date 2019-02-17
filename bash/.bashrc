@@ -9,16 +9,12 @@ case $- in
 esac
 
 # If running in a non-unicode locale (which breaks many programs), try forcing it.
-if ! locale | grep "LANG=" | grep UTF-8; then
-	export LANG=C.UTF-8
-fi
-if ! locale | grep "LC_ALL=" | grep UTF-8; then
-	export LC_ALL=C.UTF-8
-fi
-if ! locale | grep "LANGUAGE=" | grep UTF-8; then
-	export LANGUAGE=C.UTF-8
-fi
-
+locale_settings=("LANG" "LANGUAGE" "LC_CTYPE" "LC_NUMERIC" "LC_TIME" "LC_COLLATE" "LC_MONETARY" "LC_MESSAGES" "LC_PAPER" "LC_NAME" "LC_ADDRESS" "LC_TELEPHONE" "LC_MEASUREMENT" "LC_IDENTIFICATION")
+for elem in ${locale_settings[*]}; do
+	if ! locale | grep "$elem" | grep UTF-8 &> /dev/null; then
+		export "$elem"=C.UTF-8
+	fi
+done
 
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
