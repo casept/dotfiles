@@ -14,6 +14,9 @@ import shutil
 import subprocess
 import re
 
+IGNORED_DIRS = {".git", ".mypy_cache"}
+
+
 def get_packages(directory):
     """
     Returns the list of all stow packages in *directory*,
@@ -24,7 +27,7 @@ def get_packages(directory):
     packages = list()
     for entry in os.listdir(directory):
         if os.path.isdir(entry):
-            if not entry.endswith(".git"):
+            if entry not in IGNORED_DIRS:
                 packages.append(entry)
     return packages
 
