@@ -20,3 +20,8 @@ runtmux() {
 		test -z "$TMUX" && (tmux attach || tmux new-session)
 	fi
 }
+
+# Figure out which program listens on a port
+whoseport() {
+	lsof -i ":$1" | grep LISTEN
+}
