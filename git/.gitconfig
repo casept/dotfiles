@@ -10,7 +10,7 @@
 	autosetuprebase = always
 [commit]
 	template = ~/.gitmessage
-	gpgsign = true
+	gpgSign = false
 [merge]
 	tool = vimdiff
 	conflictstyle = diff3
