@@ -130,6 +130,12 @@ export GOPATH=$HOME/go
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH:$HOME/usr/bin:$HOME/.cargo/bin:$GOPATH/bin:$HOME/.local/bin/"
 
+# Add crostool-ng cross compilers to PATH if present
+if [ -d ~/x-tools ]; then
+	for dir in ~/x-tools/*; do
+		export PATH="$dir/bin":/$PATH
+	done
+fi
 
 # Load additional termux rc file if found to be running in termux
 # It's important to do this last, as some settings from ~/.bashrc are overriden.
