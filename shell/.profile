@@ -16,13 +16,6 @@ if [ -n "$BASH_VERSION" ]; then
     fi
 fi
 
-# Start gpg-agent
-# Currently commented out because the pgrep check seems to fail
-# TODO: Fix
-#if ! pgrep gpg-agent >/dev/null 2>&1; then
-#	eval "$(gpg-agent --daemon || true)" # Sometimes pgrep fails for whatever reason, but gpg-agent isn't that critical so I don't care much if it fails.
-#fi
-
 # set PATH so it includes user's private bin if it exists
 if [ -d "$HOME/bin" ] ; then
     PATH="$PATH:$HOME/bin"
@@ -30,4 +23,22 @@ fi
 
 if [ -d "/home/linuxbrew/.linuxbrew" ] ; then
 	eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
+fi
+
+#define environmental vars
+export GOPATH=$HOME/go
+export PYENV_ROOT="$HOME/.pyenv"
+export PATH="$PYENV_ROOT/bin:$PATH:$HOME/usr/bin:$HOME/.cargo/bin:$GOPATH/bin:$HOME/.local/bin/"
+
+# Add crostool-ng cross compilers to PATH if present
+if [ -d ~/x-tools ]; then
+	for dir in ~/x-tools/*; do
+		export PATH="$dir/bin":/$PATH
+	done
+fi
+
+
+# Prepare pyenv if installed
+if [ -x "$(command -v pyenv)" ]; then
+	eval "$(pyenv init -)"
 fi

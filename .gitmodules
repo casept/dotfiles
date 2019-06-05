@@ -88,3 +88,6 @@
 [submodule "vim/.vim/pack/casept/start/vim-tmux-navigator"]
 	path = vim/.vim/pack/casept/start/vim-tmux-navigator
 	url = https://github.com/christoomey/vim-tmux-navigator
+[submodule "zsh/.oh-my-zsh"]
+	path = zsh/.oh-my-zsh
+	url = https://github.com/robbyrussell/oh-my-zsh

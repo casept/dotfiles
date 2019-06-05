@@ -103,12 +103,12 @@ export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quo
 
 # Alias definitions.
 # You may want to put all your additions into a separate file like
-# ~/.bash_aliases, instead of adding them here directly.
+# ~/.aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
 
-if [ -f ~/.bash_aliases ]; then
+if [ -f ~/.aliases ]; then
   # shellcheck source=/dev/null
-  . ~/.bash_aliases
+  . ~/.aliases
 fi
 
 # enable programmable completion features (you don't need to enable
@@ -125,26 +125,9 @@ fi
 # Enable fzf settings if found
 [ -f ~/.fzf.bash  ] && source ~/.fzf.bash
 
-#define environmental vars
-export GOPATH=$HOME/go
-export PYENV_ROOT="$HOME/.pyenv"
-export PATH="$PYENV_ROOT/bin:$PATH:$HOME/usr/bin:$HOME/.cargo/bin:$GOPATH/bin:$HOME/.local/bin/"
-
-# Add crostool-ng cross compilers to PATH if present
-if [ -d ~/x-tools ]; then
-	for dir in ~/x-tools/*; do
-		export PATH="$dir/bin":/$PATH
-	done
-fi
-
 # Load additional termux rc file if found to be running in termux
 # It's important to do this last, as some settings from ~/.bashrc are overriden.
 #TODO: find a better check
 if [ -d /data/data/com.termux ] && [ $(which termux-wake-lock) != "" ]; then
 	source ~/.bashrc_termux
-fi
-
-# Prepare pyenv if installed
-if [ -x "$(command -v pyenv)" ]; then
-	eval "$(pyenv init -)"
 fi
