@@ -91,3 +91,6 @@
 [submodule "zsh/.oh-my-zsh"]
 	path = zsh/.oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
+[submodule "vim/.vim/pack/casept/start/LanguageClient-neovim"]
+	path = vim/.vim/pack/casept/start/LanguageClient-neovim
+	url = https://github.com/autozimu/LanguageClient-neovim

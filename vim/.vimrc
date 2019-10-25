@@ -148,3 +148,9 @@ set wmh=0
 " Open splits below/to the right of current buffer (as in tmux)
 set splitbelow
 set splitright
+
+
+""" Language server config
+let g:LanguageClient_serverCommands = {
+    \ 'rust': ['~/.cargo/bin/rustup', 'run', 'stable', 'rls'],
+    \ }
