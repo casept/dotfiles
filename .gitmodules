@@ -94,3 +94,6 @@
 [submodule "vim/.vim/pack/casept/start/LanguageClient-neovim"]
 	path = vim/.vim/pack/casept/start/LanguageClient-neovim
 	url = https://github.com/autozimu/LanguageClient-neovim
+[submodule "vim/.vim/pack/casept/start/vim-rustfmt"]
+	path = vim/.vim/pack/casept/start/vim-rustfmt
+	url = https://github.com/alx741/vim-rustfmt
