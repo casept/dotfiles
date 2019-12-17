@@ -103,3 +103,9 @@ if [ -f ~/.aliases ]; then
   # shellcheck source=/dev/null
   . ~/.aliases
 fi
+
+
+# Enable direnv integration if present
+if (( $+commands[direnv] )); then
+	eval "$(direnv hook zsh)"
+fi

@@ -97,3 +97,12 @@
 [submodule "vim/.vim/pack/casept/start/vim-rustfmt"]
 	path = vim/.vim/pack/casept/start/vim-rustfmt
 	url = https://github.com/alx741/vim-rustfmt
+[submodule "vim/.vim/pack/casept/start/direnv.vim"]
+	path = vim/.vim/pack/casept/start/direnv.vim
+	url = https://github.com/direnv/direnv.vim.git
+[submodule "vim/.vim/pack/casept/start/vim-nix"]
+	path = vim/.vim/pack/casept/start/vim-nix
+	url = https://github.com/LnL7/vim-nix
+[submodule "vim/.vim/pack/casept/start/vim-addon-nix"]
+	path = vim/.vim/pack/casept/start/vim-addon-nix
+	url = https://github.com/MarcWeber/vim-addon-nix
