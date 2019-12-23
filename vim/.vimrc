@@ -131,6 +131,10 @@ autocmd InsertLeave * match ExtraWhitespace /\s\+$/
 autocmd BufWinLeave * call clearmatches()
 """
 
+""" Rust configuration
+let g:rustfmt_autosave = 1
+"""
+
 
 """ Tab configuration
 " show existing tab with 4 spaces width
