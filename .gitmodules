@@ -106,3 +106,12 @@
 [submodule "vim/.vim/pack/casept/start/vim-addon-nix"]
 	path = vim/.vim/pack/casept/start/vim-addon-nix
 	url = https://github.com/MarcWeber/vim-addon-nix
+[submodule "vim/.vim/pack/casept/start/deoplete.nvim"]
+	path = vim/.vim/pack/casept/start/deoplete.nvim
+	url = https://github.com/Shougo/deoplete.nvim
+[submodule "vim/.vim/pack/casept/start/vim-hug-neovim-rpc"]
+	path = vim/.vim/pack/casept/start/vim-hug-neovim-rpc
+	url = https://github.com/roxma/vim-hug-neovim-rpc
+[submodule "vim/.vim/pack/casept/start/nvim-yarp"]
+	path = vim/.vim/pack/casept/start/nvim-yarp
+	url = https://github.com/roxma/nvim-yarp
