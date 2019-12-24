@@ -46,72 +46,60 @@
 [submodule "vim/.vim/bundle/traces.vim"]
 	path = vim/.vim/bundle/traces.vim
 	url = https://github.com/xtal8/traces.vim
-[submodule "vim/.vim/pack/casept/start/nerdtree"]
-	path = vim/.vim/pack/casept/start/nerdtree
-	url = https://github.com/scrooloose/nerdtree
 [submodule "vim/.vim/pack/casept/start/neocomplete.vim"]
 	path = vim/.vim/pack/casept/start/neocomplete.vim
 	url = https://github.com/Shougo/neocomplete.vim
-[submodule "vim/.vim/pack/casept/start/rust.vim"]
-	path = vim/.vim/pack/casept/start/rust.vim
-	url = https://github.com/rust-lang/rust.vim
-[submodule "vim/.vim/pack/casept/start/auto-pairs"]
-	path = vim/.vim/pack/casept/start/auto-pairs
-	url = https://github.com/jiangmiao/auto-pairs
-[submodule "vim/.vim/pack/casept/start/traces.vim"]
-	path = vim/.vim/pack/casept/start/traces.vim
-	url = https://github.com/xtal8/traces.vim
-[submodule "vim/.vim/pack/casept/start/vim-alias"]
-	path = vim/.vim/pack/casept/start/vim-alias
-	url = https://github.com/Konfekt/vim-alias
-[submodule "vim/.vim/pack/casept/start/vim-autopep8"]
-	path = vim/.vim/pack/casept/start/vim-autopep8
-	url = https://github.com/tell-k/vim-autopep8
-[submodule "vim/.vim/pack/casept/start/vim-flake8"]
-	path = vim/.vim/pack/casept/start/vim-flake8
-	url = https://github.com/nvie/vim-flake8
-[submodule "vim/.vim/pack/casept/start/vim-fugitive"]
-	path = vim/.vim/pack/casept/start/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive
-[submodule "vim/.vim/pack/casept/start/vim-go"]
-	path = vim/.vim/pack/casept/start/vim-go
-	url = https://github.com/fatih/vim-go
-[submodule "vim/.vim/pack/casept/start/vim-toml"]
-	path = vim/.vim/pack/casept/start/vim-toml
-	url = https://github.com/cespare/vim-toml
-[submodule "vim/.vim/pack/casept/start/vimux"]
-	path = vim/.vim/pack/casept/start/vimux
-	url = https://github.com/benmills/vimux
-[submodule "vim/.vim/pack/casept/start/ale"]
-	path = vim/.vim/pack/casept/start/ale
-	url = https://github.com/w0rp/ale.git
-[submodule "vim/.vim/pack/casept/start/vim-tmux-navigator"]
-	path = vim/.vim/pack/casept/start/vim-tmux-navigator
-	url = https://github.com/christoomey/vim-tmux-navigator
 [submodule "zsh/.oh-my-zsh"]
 	path = zsh/.oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
-[submodule "vim/.vim/pack/casept/start/LanguageClient-neovim"]
-	path = vim/.vim/pack/casept/start/LanguageClient-neovim
-	url = https://github.com/autozimu/LanguageClient-neovim
-[submodule "vim/.vim/pack/casept/start/vim-rustfmt"]
-	path = vim/.vim/pack/casept/start/vim-rustfmt
-	url = https://github.com/alx741/vim-rustfmt
-[submodule "vim/.vim/pack/casept/start/direnv.vim"]
-	path = vim/.vim/pack/casept/start/direnv.vim
-	url = https://github.com/direnv/direnv.vim.git
-[submodule "vim/.vim/pack/casept/start/vim-nix"]
-	path = vim/.vim/pack/casept/start/vim-nix
-	url = https://github.com/LnL7/vim-nix
 [submodule "vim/.vim/pack/casept/start/vim-addon-nix"]
 	path = vim/.vim/pack/casept/start/vim-addon-nix
 	url = https://github.com/MarcWeber/vim-addon-nix
-[submodule "vim/.vim/pack/casept/start/deoplete.nvim"]
-	path = vim/.vim/pack/casept/start/deoplete.nvim
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/ale"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/ale
+	url = https://github.com/dense-analysis/ale
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/auto-pairs"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/auto-pairs
+	url = https://github.com/jiangmiao/auto-pairs
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/deoplete.nvim"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim
-[submodule "vim/.vim/pack/casept/start/vim-hug-neovim-rpc"]
-	path = vim/.vim/pack/casept/start/vim-hug-neovim-rpc
-	url = https://github.com/roxma/vim-hug-neovim-rpc
-[submodule "vim/.vim/pack/casept/start/nvim-yarp"]
-	path = vim/.vim/pack/casept/start/nvim-yarp
-	url = https://github.com/roxma/nvim-yarp
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/direnv.vim"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/direnv.vim
+	url = https://github.com/direnv/direnv.vim
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/LanguageClient-neovim"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/LanguageClient-neovim
+	url = https://github.com/autozimu/LanguageClient-neovim
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/nerdtree"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/nerdtree
+	url = https://github.com/scrooloose/nerdtree
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/rust.vim"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/rust.vim
+	url = https://github.com/rust-lang/rust.vim
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/traces.vim"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/traces.vim
+	url = https://github.com/markonm/traces.vim
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/vim-alias"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/vim-alias
+	url = https://github.com/konfekt/vim-alias
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/vim-autopep8"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/vim-autopep8
+	url = https://github.com/tell-k/vim-autopep8
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/vim-fugitive"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/vim-go"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/vim-go
+	url = https://github.com/fatih/vim-go
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/vim-nix"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/vim-nix
+	url = https://github.com/LnL7/vim-nix
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/vim-tmux-navigator"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/vim-tmux-navigator
+	url = https://github.com/christoomey/vim-tmux-navigator
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/vim-toml"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/vim-toml
+	url = https://github.com/cespare/vim-toml
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/vimux"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/vimux
+	url = https://github.com/benmills/vimux
