@@ -43,17 +43,6 @@ colorscheme monokai
 let NERDTreeIgnore=['\.pyc$', '\~$']
 """
 
-""" Load vim-alias aliases from ~/.vim/aliases.vimrc
-if exists('s:loaded_vimafter')
-	silent doautocmd VimAfter VimEnter *
-else
-	let s:loaded_vimafter = 1
-	augroup VimAfter
-	autocmd VimEnter * source ~/.vim/aliases.vimrc
-	augroup END
-endif
-"""
-
 
 """ Enable line numbering and change color of LN
 set number
