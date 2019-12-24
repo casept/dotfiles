@@ -143,3 +143,8 @@ set splitright
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'stable', 'rls'],
     \ }
+
+
+""" Rainbow parentheses
+let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
+au BufEnter * :RainbowParentheses<CR>
