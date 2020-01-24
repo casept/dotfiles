@@ -106,3 +106,6 @@
 [submodule "neovim/.local/share/nvim/site/pack/casept/start/rainbow_parentheses.vim"]
 	path = neovim/.local/share/nvim/site/pack/casept/start/rainbow_parentheses.vim
 	url = https://github.com/junegunn/rainbow_parentheses.vim
+[submodule "kakoune/.config/kak/autoload/kakoune-rainbow"]
+	path = kakoune/.config/kak/autoload/kakoune-rainbow
+	url = https://github.com/JJK96/kakoune-rainbow
