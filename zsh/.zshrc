@@ -104,6 +104,7 @@ if [ -f ~/.aliases ]; then
   . ~/.aliases
 fi
 
+bindkey -v
 
 # Enable direnv integration if present
 if (( $+commands[direnv] )); then
