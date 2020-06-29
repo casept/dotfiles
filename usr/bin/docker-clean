@@ -14,3 +14,19 @@ for image in $(sudo docker image ls -a -q)
 do
 	sudo docker image rm -f $image
 done
+
+# Stop all containers
+for running_container in $(podman container ls -q)
+do
+	podman container stop $running_container
+done
+# Remove all containers
+for container in $(podman container ls -a -q)
+do
+	podman container rm -f $container
+done
+# Remove all images
+for image in $(podman image ls -a -q)
+do
+	podman image rm -f $image
+done
