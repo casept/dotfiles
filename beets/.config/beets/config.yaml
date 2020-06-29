@@ -1,0 +1,9 @@
+directory: ~/Music
+library: ~/Music/beets.db
+plugins: convert
+convert:
+  format: opus
+  never_convert_lossy_files: true
+  embed: true
+  copy_album_art: true
+  opus: ffmpeg -i $source -y -vn -acodec libopus -ab 64k $dest
