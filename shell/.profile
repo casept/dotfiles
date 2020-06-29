@@ -42,3 +42,8 @@ fi
 if [ -x "$(command -v pyenv)" ]; then
 	eval "$(pyenv init -)"
 fi
+
+# Make direnv shut up
+export DIRENV_LOG_FORMAT=
+
+if [ -e /home/user/.nix-profile/etc/profile.d/nix.sh ]; then . /home/user/.nix-profile/etc/profile.d/nix.sh; fi # added by Nix installer
