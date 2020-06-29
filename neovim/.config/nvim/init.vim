@@ -64,37 +64,9 @@ set autoindent
 set pastetoggle=<F5>
 """
 
-
-"" Deoplete config
-let g:acp_enableAtStartup = 0
-let g:deoplete#enable_at_startup = 1
-" Plugin key-mappings.
-inoremap <expr><C-g>     deoplete#undo_completion()
-inoremap <expr><C-l>     deoplete#complete_common_string()
-
-" Recommended key-mappings.
-" <CR>: close popup and save indent.
-inoremap <silent> <CR> <C-r>=<SID>my_cr_function()<CR>
-function! s:my_cr_function()
-    return deoplete#close_popup() . "\<CR>"
-endfunction
 " <TAB>: completion.
 inoremap <expr><TAB>  pumvisible() ? "\<C-n>" : "\<TAB>"
 " <C-h>, <BS>: close popup and delete backword char.
-inoremap <expr><C-h> deoplete#smart_close_popup()."\<C-h>"
-inoremap <expr><BS> deoplete#smart_close_popup()."\<C-h>"
-inoremap <expr><C-y>  deoplete#close_popup()
-inoremap <expr><C-e>  deoplete#cancel_popup()
-
-" Go related mappings
-au FileType go nmap <Leader>i <Plug>(go-info)
-au FileType go nmap <Leader>gd <Plug>(go-doc)
-au FileType go nmap <Leader>r <Plug>(go-run)
-au FileType go nmap <Leader>b <Plug>(go-build)
-au FileType go nmap <Leader>t <Plug>(go-test)
-au FileType go nmap gd <Plug>(go-def-tab)
-""" End of deoplete config
-
 
 """ Highlight trailing whitespace
 highlight ExtraWhitespace ctermbg=red guibg=red
@@ -131,7 +103,7 @@ set splitright
 """ Language server config
 let g:LanguageClient_serverCommands = {
     \ 'rust': ['rustup', 'run', 'stable', 'rls'],
-    \ }
+    \ 'go': ['gopls'], }
 
 
 """ Rainbow parentheses
