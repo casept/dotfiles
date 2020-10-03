@@ -128,3 +128,9 @@
 [submodule "neovim/.local/share/nvim/site/pack/casept/start/vim-lsp-cxx-highlight"]
 	path = neovim/.local/share/nvim/site/pack/casept/start/vim-lsp-cxx-highlight
 	url = https://github.com/jackguo380/vim-lsp-cxx-highlight
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/vim-cmake-syntax"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/vim-cmake-syntax
+	url = https://github.com/pboettch/vim-cmake-syntax.git
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/rainbow"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/rainbow
+	url = https://github.com/luochen1990/rainbow

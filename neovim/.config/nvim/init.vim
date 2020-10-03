@@ -7,14 +7,6 @@ set foldlevel=99
 " Use the spacebar to fold
 nnoremap <space> za
 
-"Automatically run autopep8
-autocmd BufWritePost,FileWritePost *.py :call Autopep8() | cwindow
-" autopep8 on pressing <F8>
-autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
-" Disable diff view for autopep8
-let g:autopep8_disable_show_diff=1
-"""
-
 
 """ Colorscheme configuration
 filetype plugin indent on
@@ -95,39 +87,40 @@ let g:neoformat_only_msg_on_error = 1
 """ Denite config
 
 " Define mappings
-autocmd FileType denite call s:denite_my_settings()
-function! s:denite_my_settings() abort
-  nnoremap <silent><buffer><expr> <CR>
-  \ denite#do_map('do_action')
-  nnoremap <silent><buffer><expr> d
-  \ denite#do_map('do_action', 'delete')
-  nnoremap <silent><buffer><expr> p
-  \ denite#do_map('do_action', 'preview')
-  nnoremap <silent><buffer><expr> q
-  \ denite#do_map('quit')
-  nnoremap <silent><buffer><expr> i
-  \ denite#do_map('open_filter_buffer')
-  nnoremap <silent><buffer><expr> <Space>
-  \ denite#do_map('toggle_select').'j'
-endfunction
+" TODO: Reenable once nix neovim package gets a bumped msgpack
+"autocmd FileType denite call s:denite_my_settings()
+"function! s:denite_my_settings() abort
+"  nnoremap <silent><buffer><expr> <CR>
+"  \ denite#do_map('do_action')
+"  nnoremap <silent><buffer><expr> d
+"  \ denite#do_map('do_action', 'delete')
+"  nnoremap <silent><buffer><expr> p
+"  \ denite#do_map('do_action', 'preview')
+"  nnoremap <silent><buffer><expr> q
+"  \ denite#do_map('quit')
+"  nnoremap <silent><buffer><expr> i
+"  \ denite#do_map('open_filter_buffer')
+"  nnoremap <silent><buffer><expr> <Space>
+"  \ denite#do_map('toggle_select').'j'
+"endfunction
 
-autocmd FileType denite-filter call s:denite_filter_my_settings()
-	function! s:denite_filter_my_settings() abort
-	  imap <silent><buffer> <C-o> <Plug>(denite_filter_quit)
-	endfunction
+"autocmd FileType denite-filter call s:denite_filter_my_settings()
+"	function! s:denite_filter_my_settings() abort
+"	  imap <silent><buffer> <C-o> <Plug>(denite_filter_quit)
+"	endfunction
 
 " Use ripgrep in place of grep
-call denite#custom#var('grep', 'command', ['rg'])
+"call denite#custom#var('grep', 'command', ['rg'])
 " Custom options for ripgrep
-call denite#custom#var('grep', 'default_opts', ['--hidden', '--vimgrep', '--heading', '-S'])
+"call denite#custom#var('grep', 'default_opts', ['--hidden', '--vimgrep', '--heading', '-S'])
 " Recommended defaults for ripgrep via Denite docs
-call denite#custom#var('grep', 'recursive_opts', [])
-call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
-call denite#custom#var('grep', 'separator', ['--'])
-call denite#custom#var('grep', 'final_opts', [])
+"call denite#custom#var('grep', 'recursive_opts', [])
+"call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+"call denite#custom#var('grep', 'separator', ['--'])
+"call denite#custom#var('grep', 'final_opts', [])
 
 " Remove date from buffer list
-call denite#custom#var('buffer', 'date_format', '')
+"call denite#custom#var('buffer', 'date_format', '')
 """
 
 
@@ -135,8 +128,13 @@ call denite#custom#var('buffer', 'date_format', '')
 packadd termdebug
 """
 
-
-""" Rainbow parentheses
-let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
-au BufEnter * :RainbowParentheses<CR>
+""" Rainbow brackets
+let g:rainbow_active = 1
+" Default colors are poorly visible w/ monokai
+let g:rainbow_conf = {'ctermfgs': ['blue', 'yellow', 'cyan', 'magenta']}
+" Cmake syntax highlighting breaks if used alongside rainbow
+augroup rainbow_off
+    au!
+    au FileType cmake RainbowToggleOff
+augroup END
 """
