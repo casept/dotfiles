@@ -7,27 +7,12 @@ set foldlevel=99
 " Use the spacebar to fold
 nnoremap <space> za
 
-"Ignore E501 (do not complain about long lines in python)
-let g:ale_python_autopep8_options="--ignore=E501"
-let g:ale_python_flake8_options="--ignore=E501,E225"
 "Automatically run autopep8
 autocmd BufWritePost,FileWritePost *.py :call Autopep8() | cwindow
 " autopep8 on pressing <F8>
 autocmd FileType python noremap <buffer> <F8> :call Autopep8()<CR>
 " Disable diff view for autopep8
 let g:autopep8_disable_show_diff=1
-
-""" Golang configuration
-"Enable golint to be run using :Lint
-set rtp+=$GOPATH/src/github.com/golang/lint/misc/vim
-"Automatically run golint on :w
-autocmd BufWritePost,FileWritePost *.go execute 'Lint' | cwindow
-" Set vim-go to run goimports on save
-let g:go_fmt_command = "goimports"
-" Run gometalinter on save
-let g:ale_linters = {'go': ['gometalinter']}
-" Enable several additional linters for gometalinter
-let g:go_gometalinter_options = "--enable=misspell --enable=unparam --enable=unused --enable=safesql --enable=staticcheck"
 """
 
 
@@ -37,12 +22,6 @@ syntax on
 set background=dark
 colorscheme monokai
 """
-
-""" NERDTree configuration
-" List of files for NERDTree to ignore
-let NERDTreeIgnore=['\.pyc$', '\~$']
-"""
-
 
 """ Enable line numbering and change color of LN
 set number
@@ -94,22 +73,70 @@ set shiftwidth=4
 set wmh=0
 """
 
+
 """ Split config
 " Open splits below/to the right of current buffer (as in tmux)
 set splitbelow
 set splitright
+"""
 
 
-""" Language server config
-let g:LanguageClient_serverCommands = {
-    \ 'rust': ['rustup', 'run', 'stable', 'rls'],
-    \ 'go': ['gopls'],
-    \ 'c': ['ccls', '--log-file=/tmp/cc.log'],
-    \ 'cpp': ['ccls', '--log-file=/tmp/cc.log'],
-    \ 'cuda': ['ccls', '--log-file=/tmp/cc.log'],
-    \ 'objc': ['ccls', '--log-file=/tmp/cc.log'],
-    \ }
+""" Autoformatter config
+" Only languages not supported by coc are configured here, the rest are
+" configured via coc
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
+let g:neoformat_only_msg_on_error = 1
+"""
+
+
+""" Denite config
+
+" Define mappings
+autocmd FileType denite call s:denite_my_settings()
+function! s:denite_my_settings() abort
+  nnoremap <silent><buffer><expr> <CR>
+  \ denite#do_map('do_action')
+  nnoremap <silent><buffer><expr> d
+  \ denite#do_map('do_action', 'delete')
+  nnoremap <silent><buffer><expr> p
+  \ denite#do_map('do_action', 'preview')
+  nnoremap <silent><buffer><expr> q
+  \ denite#do_map('quit')
+  nnoremap <silent><buffer><expr> i
+  \ denite#do_map('open_filter_buffer')
+  nnoremap <silent><buffer><expr> <Space>
+  \ denite#do_map('toggle_select').'j'
+endfunction
+
+autocmd FileType denite-filter call s:denite_filter_my_settings()
+	function! s:denite_filter_my_settings() abort
+	  imap <silent><buffer> <C-o> <Plug>(denite_filter_quit)
+	endfunction
+
+" Use ripgrep in place of grep
+call denite#custom#var('grep', 'command', ['rg'])
+" Custom options for ripgrep
+call denite#custom#var('grep', 'default_opts', ['--hidden', '--vimgrep', '--heading', '-S'])
+" Recommended defaults for ripgrep via Denite docs
+call denite#custom#var('grep', 'recursive_opts', [])
+call denite#custom#var('grep', 'pattern_opt', ['--regexp'])
+call denite#custom#var('grep', 'separator', ['--'])
+call denite#custom#var('grep', 'final_opts', [])
+
+" Remove date from buffer list
+call denite#custom#var('buffer', 'date_format', '')
+"""
+
+
+""" Debugger config
+packadd termdebug
+"""
+
 
 """ Rainbow parentheses
 let g:rainbow#pairs = [['(', ')'], ['[', ']'], ['{', '}'], ['<', '>']]
 au BufEnter * :RainbowParentheses<CR>
+"""

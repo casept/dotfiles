@@ -109,3 +109,22 @@
 [submodule "kakoune/.config/kak/autoload/kakoune-rainbow"]
 	path = kakoune/.config/kak/autoload/kakoune-rainbow
 	url = https://github.com/JJK96/kakoune-rainbow
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/--branch"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/--branch
+	url = https://github.com/neoclide/coc.nvim
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/coc.nvim"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/coc.nvim
+	url = https://github.com/neoclide/coc.nvim
+	branch = release
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/vim-jsonc"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/vim-jsonc
+	url = https://github.com/kevinoid/vim-jsonc
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/neoformat"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/neoformat
+	url = https://github.com/sbdchd/neoformat
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/denite.nvim"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/denite.nvim
+	url = https://github.com/Shougo/denite.nvim
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/vim-lsp-cxx-highlight"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/vim-lsp-cxx-highlight
+	url = https://github.com/jackguo380/vim-lsp-cxx-highlight
