@@ -134,3 +134,6 @@
 [submodule "neovim/.local/share/nvim/site/pack/casept/start/rainbow"]
 	path = neovim/.local/share/nvim/site/pack/casept/start/rainbow
 	url = https://github.com/luochen1990/rainbow
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/vim-glsl"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/vim-glsl
+	url = https://github.com/tikhomirov/vim-glsl
