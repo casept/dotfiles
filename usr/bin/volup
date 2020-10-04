@@ -1,2 +1,0 @@
-#!/bin/bash
-pactl set-sink-volume $(pacmd list-sinks |awk '/* index:/{print $3}') +5%

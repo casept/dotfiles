@@ -1,0 +1,61 @@
+{
+    "position": "top",
+    "height": 22,
+
+	"modules-left": ["sway/workspaces", "sway/mode"],
+    "modules-center": ["sway/window"],
+    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "clock", "tray"],
+    "sway/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "INHIB",
+            "deactivated": "SLEEP"
+        }
+    },
+    "tray": {
+        "spacing": 5
+    },
+    "clock": {
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%Y-%m-%d}"
+    },
+    "cpu": {
+        "format": "{usage}% CPU"
+    },
+    "memory": {
+        "format": "{}% MEM"
+    },
+    "temperature": {
+        "critical-threshold": 90,
+        "format": "{temperatureC}°C"
+    },
+    "backlight": {
+        "format": "{percent}% BRIGHT"
+    },
+    "battery": {
+        "states": {
+            "warning": 40,
+            "critical": 15
+        },
+        "format": "{capacity}% BAT",
+        "format-charging": "{capacity}% CHG",
+        "format-plugged": "{capacity}% PLG",
+        "format-full": "FUL",
+        "format-alt": "{time} {icon}"
+    },
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) WLN",
+        "format-ethernet": "{ifname}: {ipaddr}/{cidr} ETH",
+        "format-linked": "{ifname} (No IP) ⚠",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "scroll-step": 5,
+        "format": "{volume}% VOL",
+        "on-click": "pavucontrol"
+    }
+}
