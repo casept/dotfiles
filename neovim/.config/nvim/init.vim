@@ -189,6 +189,9 @@ nmap <leader>rn <Plug>(coc-rename)
 " Formatting selected code.
 xmap <leader>f  <Plug>(coc-format-selected)
 nmap <leader>f  <Plug>(coc-format-selected)
+
+" coc-highlight config
+autocmd CursorHold * silent call CocActionAsync('highlight')
 """
 
 
@@ -205,4 +208,10 @@ augroup rainbow_off
     au!
     au FileType cmake RainbowToggleOff
 augroup END
+"""
+
+""" IndentLine config
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indent_blankline_char_list = ['|', '¦', '┆', '┊']
+let g:indent_blankline_space_char = ' '
 """

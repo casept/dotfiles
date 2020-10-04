@@ -1,3 +1,11 @@
 {
-	"clangd.semanticHighlighting": true
+	"diagnostic.enable": true,
+	"vimlsp.diagnostic.enable": true,
+
+	"clangd.semanticHighlighting": true,
+	"diagnostic-languageserver.filetypes": {
+		"sh": "shellcheck",
+		// clang-tidy (enabled by clangd extension) and cppcheck find different bugs, use both
+		"cpp": "cppcheck"
+	}
 }
