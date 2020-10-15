@@ -79,6 +79,9 @@ set splitright
 """ Autoformatter config
 " Only languages not supported by coc are configured here, the rest are
 " configured via coc
+let g:neoformat_enabled_cmake = ['cmakeformat']
+
+
 augroup fmt
   autocmd!
   autocmd BufWritePre * undojoin | Neoformat
@@ -214,4 +217,10 @@ augroup END
 let g:indentLine_char_list = ['|', '¦', '┆', '┊']
 let g:indent_blankline_char_list = ['|', '¦', '┆', '┊']
 let g:indent_blankline_space_char = ' '
+"""
+
+""" vim-gitgutter config
+highlight GitGutterAdd    guifg=#009900 ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 """
