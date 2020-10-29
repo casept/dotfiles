@@ -103,7 +103,7 @@ bindsym $mod+Shift+8 move container to workspace 8
 bindsym $mod+Shift+9 move container to workspace 9
 bindsym $mod+Shift+0 move container to workspace 10
 
-# reload the configuration file
+# 
 bindsym $mod+Shift+c reload
 # restart sway inplace
 bindsym $mod+Shift+r restart
@@ -213,3 +213,9 @@ bindsym XF86AudioPrev exec playerctl previous
 # Brightness controls
 bindsym XF86MonBrightnessDown exec brightnessctl set 5%-
 bindsym XF86MonBrightnessUp exec brightnessctl set +5%
+
+# Hardware display rotation button
+bindsym XF86RotateWindows exec swaymsg output $laptop transform 90 clockwise
+bindsym XF86TaskPane exec swaymsg output $laptop transform 180 clockwise
+# Make sure the touchsreen input rotates along with it
+exec swaymsg input 1386:230:Wacom_ISDv4_E6_Pen map_to_output $laptop
