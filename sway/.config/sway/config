@@ -187,7 +187,7 @@ bindsym $mod+F8 exec code
 
 # Screen locker
 # TODO: Find a saner binding
-bindsym $mod+Shift+q exec swaylock -s fill -i $wallpaper
+bindsym $mod+Shift+q exec ~/bin/swaylock-and-blank $wallpaper
 # Screenshot tool
 bindsym $mod+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $(xdg-user-dir PICTURES)/$(date +'Screenshot-%Y-%m-%d-%H%M%S.png')
 bindsym $mod+Shift+Print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +'Screenshot-%Y-%m-%d-%H%M%S.png')
