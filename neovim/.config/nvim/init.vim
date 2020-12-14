@@ -224,3 +224,10 @@ highlight GitGutterAdd    guifg=#009900 ctermfg=2
 highlight GitGutterChange guifg=#bbbb00 ctermfg=3
 highlight GitGutterDelete guifg=#ff2222 ctermfg=1
 """
+
+""" vimtex config
+let g:vimtex_compiler_method = "latexmk"
+let g:tex_flavor = "latex"
+let g:vimtex_view_method = "zathura"
+let g:vimtex_latexmk_continuous = 1
+"""
