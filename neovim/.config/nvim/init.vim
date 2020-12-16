@@ -231,3 +231,9 @@ let g:tex_flavor = "latex"
 let g:vimtex_view_method = "zathura"
 let g:vimtex_latexmk_continuous = 1
 """
+
+""" Search config
+set hlsearch
+set incsearch
+set ignorecase
+"""
