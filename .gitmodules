@@ -152,3 +152,9 @@
 [submodule "neovim/.local/share/nvim/site/pack/casept/start/vimtex"]
 	path = neovim/.local/share/nvim/site/pack/casept/start/vimtex
 	url = https://github.com/lervag/vimtex
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/arm-syntax-vim"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/arm-syntax-vim
+	url = https://github.com/ARM9/arm-syntax-vim.git
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/gruvbox"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/gruvbox
+	url = https://github.com/morhetz/gruvbox
