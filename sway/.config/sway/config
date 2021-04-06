@@ -25,9 +25,8 @@ floating_modifier $mod
 # kill focused window
 bindsym $mod+x kill
 
-# start bemenu (a program launcher)
-bindsym $mod+Shift+d exec "bemenu -i"
-bindsym $mod+d exec --no-startup-id j4-dmenu-desktop --dmenu='bemenu -i --nb "#3f3f3f" --nf "#dcdccc" --fn "pango:DejaVu Sans Mono 12"' --term=$term
+# start wofi (a program launcher)
+bindsym $mod+Shift+d exec "wofi -G -I -i --show drun"
 
 # change focus
 bindsym $mod+h focus left
