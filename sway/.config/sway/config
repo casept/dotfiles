@@ -153,6 +153,9 @@ exec --no-startup-id nm-applet --indicator
 #exec --no-startup-id blueman-applet
 # Connect to Mullvad
 exec mullvad connect
+# Start kanshi
+exec kanshi
+
 
 # Set the wallpaper
 set $wallpaper ~/.config/sway/swaybg.jpg
