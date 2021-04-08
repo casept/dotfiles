@@ -155,7 +155,8 @@ exec --no-startup-id nm-applet --indicator
 exec mullvad connect
 # Start kanshi
 exec kanshi
-
+# Start secrets management
+exec gnome-keyring-daemon --start
 
 # Set the wallpaper
 set $wallpaper ~/.config/sway/swaybg.jpg
