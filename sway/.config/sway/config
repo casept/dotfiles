@@ -217,13 +217,9 @@ bindsym XF86RotateWindows exec swaymsg output $laptop transform 90 clockwise
 bindsym XF86TaskPane exec swaymsg output $laptop transform 180 clockwise
 
 # Constrain pen and finger touch input to only the builtin display
-seat tablet0 attach 1386:230:Wacom_ISDv4_E6_Pen
-seat tablet0 attach 1386:230:Wacom_ISDv4_E6_Finger
-seat tablet0 hide_cursor 1000
 input "1386:230:Wacom_ISDv4_E6_Pen" {
 	map_to_output $laptop
 }
 input "1386:230:Wacom_ISDv4_E6_Finger" {
 	map_to_output $laptop
 }
-seat seat0 fallback true
