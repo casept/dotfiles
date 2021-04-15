@@ -159,11 +159,6 @@ nmap <leader>f  <Plug>(coc-format-selected)
 autocmd CursorHold * silent call CocActionAsync('highlight')
 """
 
-
-""" Debugger config
-packadd termdebug
-"""
-
 """ Rainbow brackets
 let g:rainbow_active = 1
 " Default colors are poorly visible w/ monokai
@@ -198,4 +193,18 @@ let g:vimtex_latexmk_continuous = 1
 set hlsearch
 set incsearch
 set ignorecase
+"""
+
+""" Termdebug config
+packadd termdebug
+noremap <silent> <leader>td :Termdebug<cr>
+noremap <silent> s :Step<cr>
+noremap <silent> o :Over<cr>
+noremap <silent> c :Continue<cr>
+noremap <silent> k :Evaluate<cr>
+"""
+
+""" Enable loading of per-project .vimrc
+set exrc
+set secure
 """
