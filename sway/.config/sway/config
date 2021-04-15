@@ -27,6 +27,8 @@ bindsym $mod+x kill
 
 # start wofi (a program launcher)
 bindsym $mod+Shift+d exec "wofi -G -I -i --show drun"
+# start wofer (a file browser)
+bindsym $mod+Shift+s exec "~/.local/share/wofer/wofer"
 
 # change focus
 bindsym $mod+h focus left
