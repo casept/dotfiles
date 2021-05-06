@@ -201,7 +201,7 @@ noremap <silent> <leader>td :Termdebug<cr>
 noremap <silent> s :Step<cr>
 noremap <silent> o :Over<cr>
 noremap <silent> c :Continue<cr>
-noremap <silent> k :Evaluate<cr>
+noremap <silent> t :Evaluate<cr>
 """
 
 """ Enable loading of per-project .vimrc
