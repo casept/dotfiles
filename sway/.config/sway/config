@@ -161,9 +161,11 @@ exec kanshi
 exec autotiling
 # Start secrets management
 exec gnome-keyring-daemon --start
+# Start KDE connect
+exec kdeconnect-indicator
 
 # Set the wallpaper
-set $wallpaper ~/.config/sway/swaybg.jpg
+set $wallpaper ~/.config/sway/wallpaper
 output "*" bg $wallpaper fill
 
 # Set they keyboard layout
@@ -191,10 +193,8 @@ bindsym $mod+F8 exec code
 # TODO: Find a saner binding
 bindsym $mod+Shift+q exec ~/bin/swaylock-and-blank $wallpaper
 # Screenshot tool
-bindsym $mod+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $(xdg-user-dir PICTURES)/$(date +'Screenshot-%Y-%m-%d-%H%M%S.png')
-bindsym $mod+Shift+Print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/$(date +'Screenshot-%Y-%m-%d-%H%M%S.png')
-
-# TODO: Switch display modes using a script
+bindsym $mod+Print exec grim -o $(swaymsg -t get_outputs | jq -r '.[] | select(.focused) | .name') $(xdg-user-dir PICTURES)/Screenshots/$(date +'Screenshot-%Y-%m-%d-%H%M%S.png')
+bindsym $mod+Shift+Print exec grim -g "$(slurp)" $(xdg-user-dir PICTURES)/Screenshots/$(date +'Screenshot-%Y-%m-%d-%H%M%S.png')
 
 # Window borders
 default_border pixel 2
@@ -227,3 +227,8 @@ input "1386:230:Wacom_ISDv4_E6_Pen" {
 input "1386:230:Wacom_ISDv4_E6_Finger" {
 	map_to_output $laptop
 }
+
+# Display whether window uses X in window title
+for_window [shell="xwayland"] title_format "%title [XWayland]";
+# Firefox sharing indicator should float rather than tiling and wasting space
+for_window [title="Firefox - Sharing Indicator"] floating enable;
