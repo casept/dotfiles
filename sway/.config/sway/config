@@ -25,10 +25,8 @@ floating_modifier $mod
 # kill focused window
 bindsym $mod+x kill
 
-# start wofi (a program launcher)
-bindsym $mod+Shift+d exec "wofi -G -I -i --show drun"
-# start wofer (a file browser)
-bindsym $mod+Shift+s exec "~/.local/share/wofer/wofer"
+# Start albert
+bindsym $mod+Shift+s exec "albert show"
 
 # change focus
 bindsym $mod+h focus left
@@ -163,6 +161,8 @@ exec autotiling
 exec gnome-keyring-daemon --start
 # Start KDE connect
 exec kdeconnect-indicator
+# Start Albert universal launcher
+exec albert
 
 # Set the wallpaper
 set $wallpaper ~/.config/sway/wallpaper
@@ -231,4 +231,4 @@ input "1386:230:Wacom_ISDv4_E6_Finger" {
 # Display whether window uses X in window title
 for_window [shell="xwayland"] title_format "%title [XWayland]";
 # Firefox sharing indicator should float rather than tiling and wasting space
-for_window [title="Firefox - Sharing Indicator"] floating enable;
+for_window [title="Firefox — Sharing Indicator"] floating enable;
