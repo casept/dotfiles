@@ -1,5 +1,9 @@
 {
 	"diagnostic.enable": true,
+	"codeLens.enable": true,
+	"diagnostic.virtualText": true,
+	"diagnostic.enableHighlightLineNumber": true,
+	"diagnostic.virtualTextCurrentLineOnly": false,
 	"vimlsp.diagnostic.enable": true,
 
 	"clangd.semanticHighlighting": true,
@@ -10,5 +14,16 @@
 	},
 
 	"rust-analyzer.hoverActions.linksInHover": true,
-	"rust-analyzer.checkOnSave.allTargets": false // Breaks on cross compile-only projects
+	// Breaks on cross compile-only projects
+	"rust-analyzer.checkOnSave.allTargets": false,
+	"rust-analyzer.lens.enable": true,
+
+	"languageserver": {
+    	"nix": {
+			"command": "rnix-lsp",
+			"filetypes": [
+       			"nix"
+      		]
+    	}
+  	}
 }
