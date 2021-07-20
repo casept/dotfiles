@@ -145,6 +145,9 @@ bar {
 
 # Startup stuff
 # Only sway-specific stuff should go here! The rest is to be started via the systemd user session.
+# To fix screensharing
+exec systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP
+exec dbus-update-activation-environment WAYLAND_DISPLAY
 # Notification daemon
 exec mako --anchor bottom-right
 # Start networkmanager
