@@ -1,0 +1,82 @@
+#!/usr/bin/env bash
+
+# -*- mode: bash -*-
+# vi: set ft=bash :
+
+set -eo pipefail
+
+function help() {
+	echo "Usage: colorscheme [light|dark|toggle|get]"
+	exit 1
+}
+
+function light() {
+	echo "light" > ~/.colorrc
+	rm -f ~/.config/alacritty/colorscheme.yml
+	ln -s ~/.config/alacritty/gruvbox_light.yaml ~/.config/alacritty/colorscheme.yml
+	# Forces a refresh
+	touch ~/.config/alacritty/alacritty.yml
+}
+
+function dark() {
+	echo "dark" > ~/.colorrc
+	rm -f ~/.config/alacritty/colorscheme.yml
+	ln -s ~/.config/alacritty/gruvbox_dark.yaml ~/.config/alacritty/colorscheme.yml
+	# Forces a refresh
+	touch ~/.config/alacritty/alacritty.yml
+}
+
+function toggle() {
+	local scheme
+	if test -f "$HOME/.colorrc"; then
+		scheme=$(cat ~/.colorrc)
+	else
+		# Default to dark
+		scheme="dark"
+	fi
+
+	if [ "$scheme" == "dark" ]; then
+		light
+	else
+		dark
+	fi
+}
+
+function get() {
+	local scheme
+	if test -f "$HOME/.colorrc"; then
+		scheme=$(cat ~/.colorrc)
+	else
+		# Default to dark
+		scheme="dark"
+	fi
+
+	# All caps because it looks better in waybar
+	echo "${scheme^^}"
+}
+
+if [ -z "$1" ]; then
+	help
+fi
+
+if [ "$1" == "light" ]; then
+	light
+	exit 0
+fi
+
+if [ "$1" == "dark" ]; then
+	dark
+	exit 0
+fi
+
+if [ "$1" == "toggle" ]; then
+	toggle
+	exit 0
+fi
+
+if [ "$1" == "get" ]; then
+	get
+	exit 0
+fi
+
+help

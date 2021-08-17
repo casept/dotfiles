@@ -4,10 +4,18 @@
 
 	"modules-left": ["sway/workspaces", "sway/mode"],
     "modules-center": ["sway/window"],
-    "modules-right": ["idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "clock", "tray"],
+    "modules-right": ["custom/colorscheme", "idle_inhibitor", "pulseaudio", "network", "cpu", "memory", "temperature", "backlight", "battery", "clock", "tray"],
     "sway/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
+	"custom/colorscheme": {
+		"format": "{}",
+		"max-length": 6,
+		"on-click": "colorscheme toggle",
+		"exec": "colorscheme get",
+		"exec-on-event": true,
+		"interval": "1"
+	},
     "idle_inhibitor": {
         "format": "{icon}",
         "format-icons": {

@@ -15,12 +15,24 @@ set updatetime=300
 set shortmess+=c
 
 
-""" Colorscheme configuration
+""" Colorscheme configuration.
+""" Whether scheme is light or dark depends on content of the ~/.colorrc file.
+""" If the file can't be read, defaults to dark.
 filetype plugin indent on
 syntax on
-set background=dark
+try
+	let colorrc = readfile(glob("~/.colorrc"))
+catch
+	let colorrc = ["dark"]
+endtry
+if colorrc[0] == "light"
+	set background=light
+else
+	set background=dark
+end
 let g:gruvbox_italic=1
 let g:gruvbox_contrast_dark="hard"
+let g:gruvbox_contrast_light="hard"
 colorscheme gruvbox
 """
 
