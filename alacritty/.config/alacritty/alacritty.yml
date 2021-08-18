@@ -6,6 +6,15 @@
 import:
     - ~/.config/alacritty/colorscheme.yml
 
+# Set fonts compatible with airline
+font:
+    normal:
+        family: "Roboto Mono for Powerline"
+    bold:
+        family: "Roboto Mono for Powerline"
+    italic:
+        family: "Roboto Mono for Powerline"
+
 env:
   # Because Debian stale and other SSH hosts have outdated terminfo databases
   TERM: xterm-256color

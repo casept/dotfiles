@@ -201,6 +201,11 @@ let g:vimtex_view_method = "zathura"
 let g:vimtex_latexmk_continuous = 1
 """
 
+""" vim-airline config
+let g:airline_powerline_fonts = 1
+"""
+
+
 """ Search config
 set hlsearch
 set incsearch
