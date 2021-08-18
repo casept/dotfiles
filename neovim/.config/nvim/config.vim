@@ -205,6 +205,9 @@ let g:vimtex_latexmk_continuous = 1
 let g:airline_powerline_fonts = 1
 """
 
+""" Fix scrolling with mouse in tmux
+set mouse=a
+"""
 
 """ Search config
 set hlsearch
