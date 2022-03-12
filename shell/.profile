@@ -21,6 +21,10 @@ if [ -d "$HOME/bin" ] ; then
     PATH="$PATH:$HOME/bin"
 fi
 
+# Check for homebrew presence and add to PATH if detected
+if [ -d "/opt/homebrew" ] ; then
+	PATH=/opt/homebrew/bin:$PATH
+fi
 if [ -d "/home/linuxbrew/.linuxbrew" ] ; then
 	eval $(/home/linuxbrew/.linuxbrew/bin/brew shellenv)
 fi
