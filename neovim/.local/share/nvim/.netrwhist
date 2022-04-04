@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/var/home/casept/dev/ragnaroek/src'
+let g:netrw_dirhist_6='/var/home/casept/dev/ragnaroek'
+let g:netrw_dirhist_5='/var/home/casept/dev/ragnaroek/src'
+let g:netrw_dirhist_4='/var/home/casept/dev/ragnaroek'
+let g:netrw_dirhist_3='/var/home/casept/dev/psxgs/.direnv'
+let g:netrw_dirhist_2='/var/home/casept/dev/toytorrent'
+let g:netrw_dirhist_1='/var/home/casept/dev/toytorrent/src'
