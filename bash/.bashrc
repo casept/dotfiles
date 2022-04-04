@@ -93,6 +93,11 @@ if [ -x /usr/bin/dircolors ]; then
     alias egrep='egrep --color=auto'
 fi
 
+# Aliases for distrobox
+alias arch-enter='distrobox enter --additional-flags="--env SHELL=zsh" -n arch -- zsh'
+alias ubuntu-enter='distrobox enter --additional-flags="--env SHELL=zsh" -n ubuntu -- zsh'
+
+
 # colored GCC warnings and errors
 export GCC_COLORS='error=01;31:warning=01;35:note=01;36:caret=01;32:locus=01:quote=01'
 
