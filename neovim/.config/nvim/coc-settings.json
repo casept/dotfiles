@@ -6,14 +6,12 @@
 	"diagnostic.virtualTextCurrentLineOnly": false,
 	"vimlsp.diagnostic.enable": true,
 
-	"clangd.semanticHighlighting": true,
 	"diagnostic-languageserver.filetypes": {
 		"sh": "shellcheck",
 		// clang-tidy (enabled by clangd extension) and cppcheck find different bugs, use both
 		"cpp": "cppcheck"
 	},
 
-	"rust-analyzer.hoverActions.linksInHover": true,
 	// Breaks on cross compile-only projects
 	"rust-analyzer.checkOnSave.allTargets": false,
 	"rust-analyzer.lens.enable": true,
