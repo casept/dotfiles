@@ -1,9 +1,6 @@
 set shortmess=a
 set cmdheight=2
 
-" Enable folding
-set foldmethod=indent
-set foldlevel=99
 " Use the spacebar to fold
 nnoremap <space> za
 " Give more space for displaying messages.
@@ -206,6 +203,22 @@ set exrc
 set secure
 """
 
+""" Treesitter config
+lua << EOF
+require'nvim-treesitter.configs'.setup {
+  ensure_installed = "maintained",
+  highlight = {
+    enable = true,
+  },
+}
+EOF
+
+" Fold w/ treesitter
+set foldmethod=expr
+set foldexpr=nvim_treesitter#foldexpr()
+set foldlevel=99 " Allow to recursively unfold
+set nofoldenable " Don't fold by default on file open
+"""
 
 """ Load non-plugin vimscripts
 source ~/.local/share/nvim/a.vim
