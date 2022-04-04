@@ -1,1 +1,212 @@
-/nix/store/zq44yn4464ncblrr8c71csm6mpds6jqv-home-manager-files/.config/nvim/init.vim
+set shortmess=a
+set cmdheight=2
+
+" Enable folding
+set foldmethod=indent
+set foldlevel=99
+" Use the spacebar to fold
+nnoremap <space> za
+" Give more space for displaying messages.
+set cmdheight=2
+" Having longer updatetime (default is 4000 ms = 4 s) leads to noticeable
+" delays and poor user experience.
+set updatetime=300
+" Don't pass messages to |ins-completion-menu|.
+set shortmess+=c
+
+
+""" Colorscheme configuration.
+""" Whether scheme is light or dark depends on content of the ~/.colorrc file.
+""" If the file can't be read, defaults to dark.
+filetype plugin indent on
+syntax on
+try
+	let colorrc = readfile(glob("~/.colorrc"))
+catch
+	let colorrc = ["dark"]
+endtry
+if colorrc[0] == "light"
+	set background=light
+else
+	set background=dark
+end
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark="hard"
+let g:gruvbox_contrast_light="hard"
+colorscheme gruvbox
+"""
+
+""" Enable line numbering and change color of LN
+set number
+highlight LineNr ctermfg=grey
+highlight LineNr guifg=#050505
+"""
+
+""" Syntax-highlighted search
+set hlsearch
+"""
+
+
+""" Enable autoindent
+set autoindent
+"""
+
+
+""" Toggle paste mode with <F5>
+set pastetoggle=<F5>
+"""
+
+""" Highlight trailing whitespace
+highlight ExtraWhitespace ctermbg=red guibg=red
+match ExtraWhitespace /\s\+$/
+autocmd BufWinEnter * match ExtraWhitespace /\s\+$/
+autocmd InsertEnter * match ExtraWhitespace /\s\+\%#\@<!$/
+autocmd InsertLeave * match ExtraWhitespace /\s\+$/
+autocmd BufWinLeave * call clearmatches()
+"""
+
+""" Rust configuration
+let g:rustfmt_autosave = 1
+"""
+
+
+""" Tab configuration
+" show existing tab with 4 spaces width
+set tabstop=4
+" when indenting with '>', use 4 spaces width
+set shiftwidth=4
+"""
+
+" Allow for 0-height windows to save space by only displaying the filename
+" instead of filename + current line
+set wmh=0
+"""
+
+
+""" Split config
+" Open splits below/to the right of current buffer (as in tmux)
+set splitbelow
+set splitright
+"""
+
+
+""" Autoformatter config
+" Only languages not supported by coc are configured here, the rest are
+" configured via coc
+let g:neoformat_enabled_cmake = ['cmakeformat']
+
+
+augroup fmt
+  autocmd!
+  autocmd BufWritePre * undojoin | Neoformat
+augroup END
+let g:neoformat_only_msg_on_error = 1
+"""
+
+
+""" Coc config
+" Use <c-space> to open completion list
+inoremap <silent><expr> <c-space> coc#refresh()
+" Use <tab> to go to next completion
+inoremap <expr> <Tab> pumvisible() ? "\<C-n>" : "\<Tab>"
+" Use <shift> <tab> to go to previous completion
+inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
+
+" Use <cr> to confirm completion, `<C-g>u` means break undo chain at current
+" position. Coc only does snippet and additional edit on confirm.
+" <cr> could be remapped by other vim plugin, try `:verbose imap <CR>`.
+if exists('*complete_info')
+  inoremap <expr> <cr> complete_info()["selected"] != "-1" ? "\<C-y>" : "\<C-g>u\<CR>"
+else
+  inoremap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+endif
+
+" Use `[g` and `]g` to navigate diagnostics
+" Use `:CocDiagnostics` to get all diagnostics of current buffer in location list.
+nmap <silent> [g <Plug>(coc-diagnostic-prev)
+nmap <silent> ]g <Plug>(coc-diagnostic-next)
+
+" GoTo code navigation.
+nmap <silent> gd <Plug>(coc-definition)
+nmap <silent> gy <Plug>(coc-type-definition)
+nmap <silent> gi <Plug>(coc-implementation)
+nmap <silent> gr <Plug>(coc-references)
+
+" Use K to show documentation in preview window.
+nnoremap <silent> K :call <SID>show_documentation()<CR>
+
+function! s:show_documentation()
+  if (index(['vim','help'], &filetype) >= 0)
+    execute 'h '.expand('<cword>')
+  else
+    call CocActionAsync('doHover')
+  endif
+endfunction
+
+" Highlight the symbol and its references when holding the cursor.
+autocmd CursorHold * silent call CocActionAsync('highlight')
+
+" Symbol renaming.
+nmap <leader>rn <Plug>(coc-rename)
+
+" Formatting selected code.
+xmap <leader>f  <Plug>(coc-format-selected)
+nmap <leader>f  <Plug>(coc-format-selected)
+
+" coc-highlight config
+autocmd CursorHold * silent call CocActionAsync('highlight')
+"""
+
+""" Rainbow brackets
+let g:rainbow_active = 1
+" Default colors are poorly visible w/ monokai
+let g:rainbow_conf = {'ctermfgs': ['blue', 'yellow', 'cyan', 'magenta']}
+" Cmake syntax highlighting breaks if used alongside rainbow
+augroup rainbow_off
+    au!
+    au FileType cmake RainbowToggleOff
+augroup END
+"""
+
+""" IndentLine config
+let g:indentLine_char_list = ['|', '¦', '┆', '┊']
+let g:indent_blankline_char_list = ['|', '¦', '┆', '┊']
+let g:indent_blankline_space_char = ' '
+"""
+
+""" vim-gitgutter config
+highlight GitGutterAdd    guifg=#009900 ctermfg=2
+highlight GitGutterChange guifg=#bbbb00 ctermfg=3
+highlight GitGutterDelete guifg=#ff2222 ctermfg=1
+"""
+
+""" vimtex config
+let g:vimtex_compiler_method = "latexmk"
+let g:tex_flavor = "latex"
+let g:vimtex_view_method = "zathura"
+let g:vimtex_latexmk_continuous = 1
+"""
+
+""" vim-airline config
+let g:airline_powerline_fonts = 1
+"""
+
+""" Fix scrolling with mouse in tmux
+set mouse=a
+"""
+
+""" Search config
+set hlsearch
+set incsearch
+set ignorecase
+"""
+
+""" Enable loading of per-project .vimrc
+set exrc
+set secure
+"""
+
+
+""" Load non-plugin vimscripts
+source ~/.local/share/nvim/a.vim
+"""
