@@ -213,6 +213,14 @@ require'nvim-treesitter.configs'.setup {
 }
 EOF
 
+""" Devicons config
+lua << EOF
+require'nvim-web-devicons'.setup {
+  default = true;
+}
+EOF
+"""
+
 " Fold w/ treesitter
 set foldmethod=expr
 set foldexpr=nvim_treesitter#foldexpr()

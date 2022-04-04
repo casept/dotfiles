@@ -8,3 +8,4 @@ neovim/.config/coc/mru
 neovim/.config/coc/memos.json
 neovim/.config/coc/suggest.txt
 neovim/.local/share/nvim/shada/main.shada
+neovim/.local/share/nvim/telescope_history

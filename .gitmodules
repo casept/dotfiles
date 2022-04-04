@@ -179,3 +179,15 @@
 [submodule "neovim/.local/share/nvim/site/pack/casept/start/nvim-treesitter"]
 	path = neovim/.local/share/nvim/site/pack/casept/start/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/plenary.nvim"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/telescope.nvim"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim
+[submodule "neovim/.local/share/nvim/site/pack/casept/nvim-web-devicons"]
+	path = neovim/.local/share/nvim/site/pack/casept/nvim-web-devicons
+	url = https://github.com/kyazdani42/nvim-web-devicons
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/nvim-web-devicons"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/nvim-web-devicons
+	url = https://github.com/kyazdani42/nvim-web-devicons
