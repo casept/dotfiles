@@ -206,7 +206,7 @@ set secure
 """ Treesitter config
 lua << EOF
 require'nvim-treesitter.configs'.setup {
-  ensure_installed = "maintained",
+  ensure_installed = { "c", "lua", "rust", "cpp", "javascript", "typescript", "bash", "bibtex", "cmake", "css", "html", "dockerfile", "devicetree", "go", "gomod", "gowork", "hcl", "json", "json5", "latex", "make", "ninja", "nix", "python", "toml", "vim", "yaml", "zig" },
   highlight = {
     enable = true,
   },
