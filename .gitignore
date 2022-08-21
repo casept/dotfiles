@@ -10,3 +10,4 @@ neovim/.config/coc/suggest.txt
 neovim/.local/share/nvim/shada/main.shada
 neovim/.local/share/nvim/telescope_history
 neovim/.config/coc/extensions/coc-rust-analyzer-data/rust-analyzer
+neovim/.config/coc/extensions/node_modules/coc-jedi/.venv/
