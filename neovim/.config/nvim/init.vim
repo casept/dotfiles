@@ -330,6 +330,13 @@ set foldlevel=99 " Allow to recursively unfold
 set nofoldenable " Don't fold by default on file open
 """
 
+
+""" crates.nvim config
+lua << EOF
+require('crates').setup()
+EOF
+
+
 """ Load non-plugin vimscripts
 source ~/.local/share/nvim/a.vim
 """

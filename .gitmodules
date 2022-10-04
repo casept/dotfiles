@@ -191,3 +191,6 @@
 [submodule "neovim/.local/share/nvim/site/pack/casept/start/nvim-web-devicons"]
 	path = neovim/.local/share/nvim/site/pack/casept/start/nvim-web-devicons
 	url = https://github.com/kyazdani42/nvim-web-devicons
+[submodule "neovim/.local/share/nvim/site/pack/casept/start/crates.nvim"]
+	path = neovim/.local/share/nvim/site/pack/casept/start/crates.nvim
+	url = https://github.com/Saecki/crates.nvim
