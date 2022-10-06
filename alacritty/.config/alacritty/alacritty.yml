@@ -9,11 +9,11 @@ import:
 # Set fonts compatible with airline
 font:
     normal:
-        family: "Roboto Mono for Powerline"
+        family: "RobotoMono Nerd Font"
     bold:
-        family: "Roboto Mono for Powerline"
+        family: "RobotoMono Nerd Font"
     italic:
-        family: "Roboto Mono for Powerline"
+        family: "RobotoMono Nerd Font"
 
 env:
   # Because Debian stale and other SSH hosts have outdated terminfo databases
