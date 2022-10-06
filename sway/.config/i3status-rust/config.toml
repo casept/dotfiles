@@ -9,8 +9,19 @@ block = "focused_window"
 format = " $title.str(0,24) | Missing "
 
 [[block]]
+block = "music"
+format = " $icon {$combo.str(0,20) $play $next |}"
+# Left click already used for buttons
+[[block.click]]
+button = "right"
+cmd = "flatpak run com.spotify.Client"
+
+# BT headset
+[[block]]
 block = "bluetooth"
-mac = "aa:aa:aa:aa:aa:aa"
+mac = "60:C5:E6:17:5C:B5"
+disconnected_format = ""
+format = " $icon "
 
 [[block]]
 block = "cpu"
