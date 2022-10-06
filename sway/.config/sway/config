@@ -181,6 +181,9 @@ exec albert
 set $wallpaper ~/.config/sway/wallpaper
 output "*" bg $wallpaper fill
 
+# Start daemon for locking screen on lid close
+exec xss-lock -- ~/bin/swaylock-and-blank $wallpaper
+
 # Set they keyboard layout
 input * xkb_layout "eu"
 
