@@ -22,7 +22,7 @@ info_type = "available"
 interval = 20
 warning = 20.0
 alert = 10.0
-format = " $icon root: $available.eng(2) "
+format = " $icon /: $available.eng(2) "
 
 [[block]]
 block = "memory"
@@ -31,10 +31,33 @@ format_mem = " $icon $mem_total_used_percents.eng(2) "
 format_swap = " $icon $swap_used_percents.eng(2) "
 
 [[block]]
+block = "net"
+format = " $icon {  $signal_strength $ssid $frequency|  } $ip "
+[[block.click]]
+button = "left"
+cmd = "nm-connection-editor"
+
+[[block]]
+block = "battery"
+device = "BAT0"
+missing_format = ""
+
+[[block]]
+block = "kdeconnect"
+format = " $icon {$bat_charge|} "
+hide_disconnected = false
+[[block.click]]
+button = "left"
+cmd = "kdeconnect-app"
+
+[[block]]
 block = "sound"
 [[block.click]]
 button = "left"
 cmd = "pavucontrol"
+
+[[block]]
+block = "backlight"
 
 # TODO: Implement mako support and enable
 #[[block]]

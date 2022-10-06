@@ -172,8 +172,8 @@ exec kanshi
 exec autotiling
 # Start secrets management
 exec gnome-keyring-daemon --start
-# Start KDE connect
-exec kdeconnect-indicator
+# Start KDE connect daemon
+exec /usr/lib/kdeconnectd
 # Start Albert universal launcher
 exec albert
 
