@@ -1,0 +1,55 @@
+[theme]
+theme = "gruvbox-dark"
+
+[icons]
+icons = "awesome"
+
+[[block]]
+block = "focused_window"
+format = " $title.str(0,24) | Missing "
+
+[[block]]
+block = "bluetooth"
+mac = "aa:aa:aa:aa:aa:aa"
+
+[[block]]
+block = "cpu"
+
+[[block]]
+block = "disk_space"
+path = "/"
+info_type = "available"
+interval = 20
+warning = 20.0
+alert = 10.0
+format = " $icon root: $available.eng(2) "
+
+[[block]]
+block = "memory"
+display_type = "memory"
+format_mem = " $icon $mem_total_used_percents.eng(2) "
+format_swap = " $icon $swap_used_percents.eng(2) "
+
+[[block]]
+block = "sound"
+[[block.click]]
+button = "left"
+cmd = "pavucontrol"
+
+# TODO: Implement mako support and enable
+#[[block]]
+#block = "notify"
+#format = " $icon {$paused{Off}|On} "
+
+[[block]]
+block = "weather"
+format = " $icon $weather $temp "
+autolocate = true
+[block.service]
+name = "metno"
+units = "metric"
+
+[[block]]
+block = "time"
+interval = 5
+format = " %a %d.%m.%y %R "

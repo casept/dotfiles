@@ -5,7 +5,7 @@ set $mod Mod4
 set $term alacritty
 
 # The display affected by the lid switch on a laptop
-set $laptop LVDS-1
+set $laptop eDP-1
 
 # Disable laptop display on lid close
 bindswitch --reload --locked lid:on output $laptop disable
@@ -26,7 +26,7 @@ floating_modifier $mod
 bindsym $mod+x kill
 
 # Start albert
-bindsym $mod+Shift+s exec "albert show"
+bindsym $mod+space exec "albert show"
 
 # change focus
 bindsym $mod+h focus left
@@ -70,7 +70,7 @@ bindsym $mod+e layout toggle split
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+# bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
@@ -137,9 +137,19 @@ bindsym $mod+r mode "resize"
 
 # Configure system info bar
 bar {
-	swaybar_command waybar
-    status_command i3status
+    font pango:DejaVu Sans Mono, FontAwesome 12
+    position top
+    status_command i3status-rs
     tray_output primary
+    colors {
+        separator #666666
+        background #222222
+        statusline #dddddd
+        focused_workspace #0088CC #0088CC #ffffff
+        active_workspace #333333 #333333 #ffffff
+        inactive_workspace #333333 #333333 #888888
+        urgent_workspace #2f343a #900000 #ffffff
+    }
 }
 
 
@@ -153,7 +163,7 @@ exec mako --anchor bottom-right
 # Start networkmanager
 exec --no-startup-id nm-applet --indicator
 # Start blueman
-#exec --no-startup-id blueman-applet
+exec --no-startup-id blueman-applet
 # Connect to Mullvad
 exec mullvad connect
 # Start kanshi
@@ -178,15 +188,15 @@ input * xkb_layout "eu"
 # Terminal emu
 bindsym $mod+F1 exec $term
 # Firefox
-bindsym $mod+F2 exec firefox
+bindsym $mod+F2 exec "flatpak run org.mozilla.firefox"
 # Music player
-bindsym $mod+F3 exec rhythmbox
+bindsym $mod+F3 exec "flatpak run org.gnome.Rhythmbox3"
 # Graphical file manager
 bindsym $mod+F4 exec thunar
 # Password manager
-bindsym $mod+F5 exec keepassxc
+bindsym $mod+F5 exec "flatpak run org.keepassxc.KeePassXC"
 # Thunderbird
-bindsym $mod+F6 exec thunderbird
+bindsym $mod+F6 exec "flatpak run org.mozilla.Thunderbird"
 # Zim wiki
 bindsym $mod+F7 exec zim
 # Visual studio code

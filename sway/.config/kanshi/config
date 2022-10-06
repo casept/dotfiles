@@ -1,29 +1,40 @@
 profile {
-	output LVDS-1 position 1920,1080 enable transform 180
+	output eDP-1 position 1920,1080 enable transform 180
 	output VGA-1 position 1920,0 enable
 	output HDMI-A-1 position 0,0 enable
 	exec swaymsg workspace 1, move workspace to HDMI-A-1
 	exec swaymsg workspace 2, move workspace to VGA-1
-	exec swaymsg workspace 3, move workspace to LVDS-1
+	exec swaymsg workspace 3, move workspace to eDP-1
 	exec swaymsg workspace 1
 }
 
 profile {
-	output LVDS-1 position 0,1080 enable transform 180
+	output eDP-1 position 0,1080 enable transform 180
 	output HDMI-A-1 position 0,0 enable
 	exec swaymsg workspace 1, move workspace to HDMI-A-1
-	exec swaymsg workspace 2, move workspace to LVDS-1
+	exec swaymsg workspace 2, move workspace to eDP-1
 	exec swaymsg workspace 1
 }
 
 profile {
-	output LVDS-1 position 0,1080 enable transform 180
+	output eDP-1 position 0,1080 enable transform 180
 	output VGA-1 position 0,0 enable
 	exec swaymsg workspace 1, move workspace to VGA-1
-	exec swaymsg workspace 2, move workspace to LVDS-1
+	exec swaymsg workspace 2, move workspace to eDP-1
 	exec swaymsg workspace 1
 }
 
+# Spline dock
 profile {
-	output LVDS-1 enable transform normal
+	output eDP-1 disable
+	output 'Fujitsu Siemens Computers GmbH B24W-6 LED YV5K039784' position 1920,0 enable
+	output 'Fujitsu Siemens Computers GmbH B24W-6 LED YV5K114571' position 0,0 enable
+	exec swaymsg workspace 1, move workspace to 'Fujitsu Siemens Computers GmbH B24W-6 LED YV5K039784'
+	exec swaymsg workspace 2, move workspace to 'Fujitsu Siemens Computers GmbH B24W-6 LED YV5K114571'
+	exec swaymsg workspace 1
+}
+
+# Laptop
+profile {
+	output eDP-1 enable transform normal
 }
