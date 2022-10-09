@@ -1,0 +1,12 @@
+[Unit]
+Description=Free WiFi autoconnect service
+After=network-online.target
+
+[Service]
+Type=simple
+ExecStart=freewifid
+ExecReload=/bin/kill -USR1 $MAINPID
+Restart=always
+
+[Install]
+WantedBy=default.target

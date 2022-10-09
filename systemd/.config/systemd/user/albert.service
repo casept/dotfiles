@@ -1,0 +1,14 @@
+[Unit]
+Description=Finder-style search
+Documentation=man:albert(1)
+PartOf=sway-session.target
+Requires=sway-session.target
+After=sway-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/albert
+Restart=always
+
+[Install]
+WantedBy=sway-session.target

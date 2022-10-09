@@ -154,28 +154,18 @@ bar {
 
 
 # Startup stuff
-# Only sway-specific stuff should go here! The rest is to be started via the systemd user session.
-# To fix screensharing
-exec systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP
+# So services started by systemd can talk to sway
+exec systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP I3SOCK SWAYSOCK
 exec dbus-update-activation-environment WAYLAND_DISPLAY
-# Notification daemon
-exec mako --anchor bottom-right
 # Start networkmanager
 exec --no-startup-id nm-applet --indicator
 # Start blueman
 exec --no-startup-id blueman-applet
 # Connect to Mullvad
 exec mullvad connect
-# Start kanshi
-exec kanshi
-# Start autotiling
-exec autotiling
-# Start secrets management
-exec gnome-keyring-daemon --start
-# Start KDE connect daemon
-exec /usr/lib/kdeconnectd
-# Start Albert universal launcher
-exec albert
+
+# Tell systemd to start sway-specific services
+exec systemctl --user start sway-session.target
 
 # Set the wallpaper
 set $wallpaper ~/.config/sway/wallpaper

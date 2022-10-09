@@ -1,0 +1,14 @@
+[Unit]
+Description=sway autotiling
+Documentation=man:autotiling(1)
+PartOf=sway-session.target
+Requires=sway-session.target
+After=sway-session.target
+
+[Service]
+Type=simple
+ExecStart=autotiling
+Restart=always
+
+[Install]
+WantedBy=sway-session.target
