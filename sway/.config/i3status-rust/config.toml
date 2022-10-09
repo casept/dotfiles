@@ -23,6 +23,13 @@ mac = "60:C5:E6:17:5C:B5"
 disconnected_format = ""
 format = " $icon "
 
+# BT mouse
+[[block]]
+block = "bluetooth"
+mac = "D4:D4:6C:06:E8:62"
+disconnected_format = ""
+format = " $icon "
+
 [[block]]
 block = "cpu"
 
