@@ -1,0 +1,30 @@
+theme = "gruvbox_dark_hard"
+
+[editor]
+auto-format = true
+mouse = true
+shell = ["zsh", "-c"]
+rulers = [160]
+color-modes = true
+bufferline = "always"
+
+[editor.statusline]
+left = ["mode", "spinner"]
+center = ["file-name"]
+right = ["diagnostics", "selections", "position", "file-encoding", "file-line-ending", "file-type", "total-line-numbers"]
+separator = "│"
+
+[editor.lsp]
+display-messages = true
+
+[editor.whitespace.render]
+tab = "all"
+space = "all"
+newline = "none"
+[editor.whitespace.characters]
+space = "·"
+nbsp = "⍽"
+tab = "→"
+
+[editor.indent-guides]
+render = true
