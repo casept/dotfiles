@@ -12,6 +12,9 @@
 		"cpp": "cppcheck"
 	},
 
+	// If a header file's language is ambiguous, assume C++
+    "clangd.fallbackFlags" : ["--std c++20 --language c++ "],
+
 	// Breaks on cross compile-only projects
 	"rust-analyzer.checkOnSave.allTargets": false,
 	"rust-analyzer.lens.enable": true,
@@ -24,4 +27,6 @@
       		]
     	}
   	}
+
+
 }

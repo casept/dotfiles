@@ -1,5 +1,7 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhistcnt =5
+let g:netrw_dirhistcnt =7
+let g:netrw_dirhist_7='/home/casept/jirko/LED_Tafel/led_tafel/.git'
+let g:netrw_dirhist_6='/home/casept/jirko/LED_Tafel/led_tafel/master/fwupgrade'
 let g:netrw_dirhist_5='/home/casept/jirko/LED_Tafel/led_tafel/slave/src'
 let g:netrw_dirhist_4='/home/casept/jirko/cardslurp/cardslurp/installer'
 let g:netrw_dirhist_3='/'
@@ -8,5 +10,3 @@ let g:netrw_dirhist_1='/mnt/auslesestation'
 let g:netrw_dirhist_0='/mnt/auslesestation/image'
 let g:netrw_dirhist_9='/mnt/auslesestation/image/yocto'
 let g:netrw_dirhist_8='/mnt/auslesestation/image/yocto/meta-auslesestation'
-let g:netrw_dirhist_7='/mnt/auslesestation/image/yocto/meta-auslesestation/recipes-auslesestation'
-let g:netrw_dirhist_6='/mnt/auslesestation/image/yocto/meta-auslesestation/recipes-auslesestation/auslesestation-bindmount'
