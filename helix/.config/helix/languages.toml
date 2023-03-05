@@ -1,0 +1,17 @@
+# For whatever reason, helix disables autoformatting by default for many languages.
+
+[[language]]
+name = "python"
+auto-format = true
+
+[[language]]
+name = "rust"
+auto-format = true
+
+[[language]]
+name = "c"
+auto-format = true
+
+[[language]]
+name = "cpp"
+auto-format = true

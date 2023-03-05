@@ -28,3 +28,12 @@ tab = "→"
 
 [editor.indent-guides]
 render = true
+
+[keys.normal]
+g = { a = "code_action" }
+0 = "goto_line_start"
+"$" = "goto_line_end"
+
+[keys.select]
+0 = "goto_line_start"
+"$" = "goto_line_end"
