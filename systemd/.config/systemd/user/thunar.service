@@ -1,0 +1,14 @@
+[Unit]
+Description=File manager
+Documentation=man:thunar(1)
+PartOf=sway-session.target
+Requires=sway-session.target
+After=sway-session.target
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/thunar --daemon
+Restart=always
+
+[Install]
+WantedBy=sway-session.target
