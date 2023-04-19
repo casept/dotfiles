@@ -136,3 +136,9 @@ fi
 if [ -d /data/data/com.termux ] && [ $(which termux-wake-lock) != "" ]; then
 	source ~/.bashrc_termux
 fi
+
+# Hishtory Config
+if [ -d "$HOME/.hishtory" ]; then
+  export PATH="$PATH:$HOME/.hishtory"
+  source ~/.hishtory/config.sh
+fi

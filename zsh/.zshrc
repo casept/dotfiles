@@ -110,3 +110,9 @@ bindkey -v
 if (( $+commands[direnv] )); then
 	eval "$(direnv hook zsh)"
 fi
+
+# Hishtory Config
+if [ -d "$HOME/.hishtory" ]; then
+  export PATH="$PATH:$HOME/.hishtory"
+  source ~/.hishtory/config.zsh
+fi
