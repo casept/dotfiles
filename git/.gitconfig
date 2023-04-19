@@ -4,6 +4,7 @@
 	signingkey = 9C384ABC
 [push]
 	default = simple
+	autoSetupRemote = true
 [color]
 	ui = auto
 [branch]
