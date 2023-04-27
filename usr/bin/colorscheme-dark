@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+# -*- mode: bash -*-
+# vi: set ft=bash :
+
+set -eo pipefail
+~/bin/colorscheme dark
