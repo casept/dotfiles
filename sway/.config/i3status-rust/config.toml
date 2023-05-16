@@ -2,15 +2,15 @@
 theme = "gruvbox-dark"
 
 [icons]
-icons = "awesome"
+icons = "awesome6"
 
 [[block]]
 block = "focused_window"
-format = " $title.str(0,24) | Missing "
+format = " $title.str(max_w:21) | Missing "
 
 [[block]]
 block = "music"
-format = " $icon {$combo.str(0,20) $play $next |}"
+
 # Left click already used for buttons
 [[block.click]]
 button = "right"
@@ -40,17 +40,16 @@ info_type = "available"
 interval = 20
 warning = 20.0
 alert = 10.0
-format = " $icon /: $available.eng(2) "
+format = " $icon /: $available "
 
 [[block]]
 block = "memory"
-display_type = "memory"
-format_mem = " $icon $mem_total_used_percents.eng(2) "
-format_swap = " $icon $swap_used_percents.eng(2) "
+format = " $icon $mem_total_used_percents "
+format_alt = " $icon $swap_used_percents "
 
 [[block]]
 block = "net"
-format = " $icon {  $signal_strength $ssid $frequency|  } $ip "
+format = " $icon { $signal_strength $ssid $frequency|  } $ip "
 [[block.click]]
 button = "left"
 cmd = "nm-connection-editor"
@@ -92,5 +91,3 @@ units = "metric"
 
 [[block]]
 block = "time"
-interval = 5
-format = " %a %d.%m.%y %R "
