@@ -1,8 +1,7 @@
 # Spline dock
 profile {
-	output eDP-1 disable
-	output 'Fujitsu Siemens Computers GmbH B24W-6 LED YV5K039784' position 1920,0 enable
-	output 'Fujitsu Siemens Computers GmbH B24W-6 LED YV5K114571' position 0,0 enable
+	output 'Fujitsu Siemens Computers GmbH B24W-6 LED YV5K039784' position 1920,0 transform normal enable
+	output 'Fujitsu Siemens Computers GmbH B24W-6 LED YV5K114571' position 0,0 transform normal enable
 	exec swaymsg workspace 1, move workspace to 'Fujitsu Siemens Computers GmbH B24W-6 LED YV5K039784'
 	exec swaymsg workspace 2, move workspace to 'Fujitsu Siemens Computers GmbH B24W-6 LED YV5K114571'
 	exec swaymsg workspace 1
@@ -18,13 +17,15 @@ profile {
 	exec swaymsg workspace 1
 }
 
-# Home dock (main monitor only)
-profile {
-	output eDP-1 position 0,1080 enable transform normal
-	output 'Unknown ASUS VZ279HE L1LMTJ003753' position 0,0 enable
-	exec swaymsg workspace 1, move workspace to 'Unknown ASUS VZ279HE L1LMTJ003753'
-	exec swaymsg workspace 1
-}
+# Home dock (2 monitors via Steam Deck Dock + 1x VGA + internal display)
+#profile {
+#	output DP-4 position 0,0 transform 90 enable
+#	output DP-5 position 1080,0 enable
+#	output DP-1 position 3000,0 transform 90 enable
+#	# Right below middle monitor
+#	output eDP-1 position 1920,1080 enable transform normal
+#}
+
 
 # Laptop
 profile {
