@@ -1,3 +1,5 @@
+gaps inner 1
+
 # Use Super key as modifier
 set $mod Mod4
 
@@ -159,14 +161,10 @@ bar {
 
 # Startup stuff
 # So services started by systemd can talk to sway
-exec systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP I3SOCK SWAYSOCK
-exec dbus-update-activation-environment WAYLAND_DISPLAY
-# Start networkmanager
-exec --no-startup-id nm-applet --indicator
-# Start blueman
-exec --no-startup-id blueman-applet
-# Connect to Mullvad
-exec mullvad connect
+exec systemctl --user import-environment XDG_SESSION_TYPE XDG_CURRENT_DESKTOP I3SOCK SWAYSOCK XDG_RUNTIME_DIR WAYLAND_DISPLAY DBUS_SESSION_BUS_ADDRESS DISPLAY
+exec systemctl --user set-environment _JAVA_AWT_WM_NONREPARENTING=1
+exec systemctl --user set-environment QT_QPA_PLATFORM=wayland
+exec dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=sway
 
 # Tell systemd to start sway-specific services
 exec systemctl --user start sway-session.target
