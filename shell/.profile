@@ -128,3 +128,8 @@ if [ -n "${ZSH_VERSION-}" ]; then
      command_not_found_handle "$@"
   }
 fi
+
+# rustup and cargo
+if [ -d ~/.cargo ]; then
+	. "$HOME/.cargo/env"
+fi
