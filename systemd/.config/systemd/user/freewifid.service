@@ -4,7 +4,7 @@ After=network-online.target
 
 [Service]
 Type=simple
-ExecStart=freewifid
+ExecStart=/home/casept/bin/freewifid
 ExecReload=/bin/kill -USR1 $MAINPID
 Restart=always
 
