@@ -1,3 +1,5 @@
+set auto-load safe-path /
+
 add-auto-load-safe-path ~/dev/
 
 add-auto-load-safe-path ~/.config/gdb/
