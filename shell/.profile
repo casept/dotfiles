@@ -133,3 +133,7 @@ fi
 if [ -d ~/.cargo ]; then
 	. "$HOME/.cargo/env"
 fi
+
+# Debug info
+export DEBUGINFOD_URLS="https://debuginfod.elfutils.org/"
+export DEBUGINFOD_PROGRESS=1
