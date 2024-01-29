@@ -130,7 +130,7 @@ if [ -n "${ZSH_VERSION-}" ]; then
 fi
 
 # rustup and cargo
-if [ -d ~/.cargo ]; then
+if [ -d "$HOME/.cargo/env" ]; then
 	. "$HOME/.cargo/env"
 fi
 
