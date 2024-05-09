@@ -1,13 +1,3 @@
-neovim/.config/nvim/.netrwhist
-neovim/.config/coc/extensions/coc-go-data/
-neovim/.config/coc/list-diagnostics-history.json
-neovim/.config/coc/list-links-history.json
-neovim/.config/coc/list-lists-history.json
-neovim/.config/coc/lists
-neovim/.config/coc/mru
-neovim/.config/coc/memos.json
-neovim/.config/coc/suggest.txt
-neovim/.local/share/nvim/shada/main.shada
-neovim/.local/share/nvim/telescope_history
-neovim/.config/coc/extensions/coc-rust-analyzer-data/rust-analyzer
-neovim/.config/coc/extensions/node_modules/coc-jedi/.venv/
+usr/bin/repo
+usr/bin/gocryptfs
+usr/bin/freewifid
