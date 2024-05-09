@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+sudo ifconfig wlp6s0 down
+sudo macchanger -r -b wlp6s0
+sudo ifconfig wlp6s0 down
