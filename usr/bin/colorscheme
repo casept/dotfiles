@@ -10,15 +10,31 @@ function help() {
 	exit 1
 }
 
+function light_konsole() {
+	for pid in $(pidof konsole); do
+		qdbus-qt6 "org.kde.konsole-$pid" /Sessions/1 setProfile 'Konsole light'
+	done
+
+	sed -i "/DefaultProfile=/c\DefaultProfile=Konsole light.profile" ~/.config/konsolerc
+}
+
+function dark_konsole() {
+	for pid in $(pidof konsole); do
+		qdbus-qt6 "org.kde.konsole-$pid" /Sessions/1 setProfile 'Konsole dark'
+	done
+
+	sed -i "/DefaultProfile=/c\DefaultProfile=Konsole dark.profile" ~/.config/konsolerc
+}
+
 function light_helix() {
-	sed -i 's/theme = ".*"/theme = "gruvbox_light"/' ${HOME}/.config/helix/config.toml
+	sed -i 's/theme = ".*"/theme = "gruvbox_light"/' "${HOME}/.config/helix/config.toml"
 	# Force config reload
 	pkill -USR1 hx
 	pkill -USR1 helix
 }
 
 function dark_helix() {
-	sed -i 's/theme = ".*"/theme = "gruvbox_dark_hard"/' ${HOME}/.config/helix/config.toml
+	sed -i 's/theme = ".*"/theme = "gruvbox_dark_hard"/' "${HOME}/.config/helix/config.toml"
 	# Force config reload
 	pkill -USR1 hx
 	pkill -USR1 helix
@@ -27,11 +43,13 @@ function dark_helix() {
 
 function light() {
 	echo "light" > ~/.colorrc
+	light_konsole
 	light_helix
 }
 
 function dark() {
 	echo "dark" > ~/.colorrc
+	dark_konsole
 	dark_helix
 }
 
