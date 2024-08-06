@@ -116,3 +116,8 @@ if [ -d "$HOME/.hishtory" ]; then
   export PATH="$PATH:$HOME/.hishtory"
   source ~/.hishtory/config.zsh
 fi
+
+# Enable starship if present
+if (( $+commands[starship] )); then
+	eval "$(starship init zsh)"
+fi
