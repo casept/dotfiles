@@ -10,20 +10,6 @@ function help() {
 	exit 1
 }
 
-function light_alacritty() {
-	rm -f ~/.config/alacritty/colorscheme.yml
-	ln -s ~/.config/alacritty/gruvbox_light.yaml ~/.config/alacritty/colorscheme.yml
-	# Forces a refresh
-	touch ~/.config/alacritty/alacritty.yml
-}
-
-function dark_alacritty() {
-	rm -f ~/.config/alacritty/colorscheme.yml
-	ln -s ~/.config/alacritty/gruvbox_dark.yaml ~/.config/alacritty/colorscheme.yml
-	# Forces a refresh
-	touch ~/.config/alacritty/alacritty.yml
-}
-
 function light_helix() {
 	sed -i 's/theme = ".*"/theme = "gruvbox_light"/' ${HOME}/.config/helix/config.toml
 	# Force config reload
@@ -41,13 +27,11 @@ function dark_helix() {
 
 function light() {
 	echo "light" > ~/.colorrc
-	light_alacritty
 	light_helix
 }
 
 function dark() {
 	echo "dark" > ~/.colorrc
-	dark_alacritty
 	dark_helix
 }
 
