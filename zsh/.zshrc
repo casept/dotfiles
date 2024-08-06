@@ -68,8 +68,8 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(dircycle git gpg-agent gradle history jsontools pip pyenv python docker sudo rust golang vscode vagrant terraform web-search adb ansible archlinux mosh nmap ripgrep systemd tmux rust vi-mode zsh-autosuggestions)
-
+plugins=(dircycle git gpg-agent gradle history jsontools pip pyenv python docker sudo rust golang vscode vagrant terraform web-search ansible archlinux mosh nmap systemd tmux tmuxinator rust vi-mode zsh-autosuggestions)
+export VI_MODE_SET_CURSOR=true
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
