@@ -16,15 +16,16 @@ separator = "│"
 
 [editor.lsp]
 display-messages = true
+display-inlay-hints = true
 
-[editor.whitespace.render]
-tab = "all"
-space = "all"
-newline = "none"
-[editor.whitespace.characters]
-space = "·"
-nbsp = "⍽"
-tab = "→"
+#[editor.whitespace.render]
+#tab = "all"
+#space = "all"
+#newline = "none"
+#[editor.whitespace.characters]
+#space = "·"
+#nbsp = "⍽"
+#tab = "→"
 
 [editor.indent-guides]
 render = true
