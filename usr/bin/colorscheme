@@ -43,11 +43,15 @@ function dark_helix() {
 
 function light() {
 	echo "light" > ~/.colorrc
+	# KDE plasma
+	lookandfeeltool -a org.kde.breeze.desktop
 	light_konsole
 	light_helix
 }
 
 function dark() {
+	# KDE plasma
+	lookandfeeltool -a org.kde.breezedark.desktop
 	echo "dark" > ~/.colorrc
 	dark_konsole
 	dark_helix
