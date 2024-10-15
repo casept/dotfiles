@@ -3,7 +3,7 @@
 # -*- mode: bash -*-
 # vi: set ft=bash :
 
-set -eo pipefail
+set -xo pipefail
 
 function help() {
 	echo "Usage: colorscheme [light|dark|toggle|get]"
@@ -12,7 +12,9 @@ function help() {
 
 function light_konsole() {
 	for pid in $(pidof konsole); do
-		qdbus-qt6 "org.kde.konsole-$pid" /Sessions/1 setProfile 'Konsole light'
+		for session in $(qdbus-qt6 "org.kde.konsole-$pid" | grep /Sessions/); do
+			qdbus-qt6 "org.kde.konsole-$pid" "$session" setProfile 'Konsole light'
+		done
 	done
 
 	sed -i "/DefaultProfile=/c\DefaultProfile=Konsole light.profile" ~/.config/konsolerc
@@ -20,7 +22,9 @@ function light_konsole() {
 
 function dark_konsole() {
 	for pid in $(pidof konsole); do
-		qdbus-qt6 "org.kde.konsole-$pid" /Sessions/1 setProfile 'Konsole dark'
+		for session in $(qdbus-qt6 "org.kde.konsole-$pid" | grep /Sessions/); do
+			qdbus-qt6 "org.kde.konsole-$pid" "$session" setProfile 'Konsole dark'
+		done
 	done
 
 	sed -i "/DefaultProfile=/c\DefaultProfile=Konsole dark.profile" ~/.config/konsolerc
