@@ -1,6 +1,0 @@
-# Config file for wofer
-UWU=false # uwu mode
-TERM=alacritty # set terminal emulator
-EXEC="wofi --show=dmenu"
-EXTENSIONS=~/.local/share/wofer/extensions # extension directory
-FM="thunar" # file manager
