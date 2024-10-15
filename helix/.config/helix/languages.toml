@@ -15,3 +15,11 @@ auto-format = true
 [[language]]
 name = "cpp"
 auto-format = true
+
+[[language]]
+name = "typescript"
+auto-format = true
+
+[[language]]
+name = "javascript"
+auto-format = true
