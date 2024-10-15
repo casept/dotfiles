@@ -1,0 +1,48 @@
+MenuBar=Disabled
+
+[Desktop Entry]
+DefaultProfile=Konsole light.profile
+
+[General]
+ConfigVersion=1
+
+[KonsoleWindow]
+FocusFollowsMouse=true
+
+[MainWindow]
+1080x1920 screen: Window-Maximized=true
+1920x1080 screen: Height=1080
+1920x1080 screen: Width=1920
+1920x1080 screen: Window-Maximized=true
+2 screens: Height=1048
+2 screens: Width=1908
+2 screens: Window-Maximized=true
+3 screens: Height=515
+3 screens: Width=873
+3 screens: XPosition=1573
+3 screens: YPosition=835
+DP-1 DP-4 DP-5 Height 1920x1080 DP-5=554
+DP-1 DP-4 DP-5 Width 1920x1080 DP-5=911
+DP-4 DP-5 Height 1920x1200 DP-5=554
+DP-4 DP-5 Width 1920x1200 DP-5=911
+DisplayPort-0 DisplayPort-1 HDMI-A-0=HDMI-A-0
+HDMI-A-1 DP-2 Height 1920x1080 DP-2=554
+HDMI-A-1 DP-2 Width 1920x1080 DP-2=911
+MenuBar=Disabled
+ToolBarsMovable=Disabled
+eDP-1 Window-Maximized 1920x1080 eDP-1=true
+
+[MainWindow][Toolbar mainToolBar]
+IconSize=16
+
+[Notification Messages]
+CloseAllTabs=true
+
+[TabBar]
+ExpandTabWidth=true
+
+[Toolbar mainToolBar]
+IconSize=16
+
+[UiSettings]
+ColorScheme=
