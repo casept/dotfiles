@@ -5,9 +5,6 @@ It unstows all directories into $HOME while force-overwriting any files (a featu
 It reports whether any files have changed.
 """
 
-# Python 2 compat stuff
-from __future__ import (division, print_function, absolute_import,
-                        unicode_literals)
 import os
 import sys
 import shutil
