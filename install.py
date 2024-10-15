@@ -42,12 +42,16 @@ def cleanup(directory):
     to_be_removed = list()
     packages = get_packages(directory)
     conflict_regex = re.compile(
-        r"(?:existing target is neither a link nor a directory:\s{1})(.*)")
+        r"(?:existing target is neither a link nor a directory:\s{1})(.*)"
+    )
     for package in packages:
         # Use older subprocess functions for compat with python3 < 3.5
         try:
             subprocess.check_output(
-                ["stow", "-t", homedir, "--simulate", package], stderr=subprocess.STDOUT, universal_newlines=True)
+                ["stow", "-t", homedir, "--simulate", package],
+                stderr=subprocess.STDOUT,
+                universal_newlines=True,
+            )
         except subprocess.CalledProcessError as error:
             # Check if the error was caused by conflicts
             if "existing target is neither a link nor a directory" in error.output:
@@ -55,8 +59,7 @@ def cleanup(directory):
                 # be removed
                 conflicting_paths = conflict_regex.findall(error.output)
                 for path in conflicting_paths:
-                    to_be_removed.append(
-                        os.path.abspath(os.path.join(homedir, path)))
+                    to_be_removed.append(os.path.abspath(os.path.join(homedir, path)))
             else:
                 # Error wasn't caused by a conflict, re-raise the exception
                 raise error
@@ -88,7 +91,10 @@ def unstow(directory):
     for package in packages:
         print("Unstowing package", package)
         output = subprocess.check_output(
-            ["stow", "-t", homedir, "-v", "2", package], stderr=subprocess.STDOUT, universal_newlines=True)
+            ["stow", "-t", homedir, "-v", "2", package],
+            stderr=subprocess.STDOUT,
+            universal_newlines=True,
+        )
         if "LINK:" in output:
             changed = True
 
@@ -112,8 +118,8 @@ def main():
 
     check_if_dotfile_directory()
     # Perform cleanup
-    changed_cleanup = cleanup('.')
-    changed_unstow = unstow('.')
+    changed_cleanup = cleanup(".")
+    changed_unstow = unstow(".")
     if changed_cleanup or changed_unstow:
         print("Files changed")
     else:
