@@ -23,3 +23,10 @@ auto-format = true
 [[language]]
 name = "javascript"
 auto-format = true
+
+[[language]]
+name = "nix"
+language-servers = ["nixd","nil"]
+
+[language-server.nixd]
+command = "nixd"
