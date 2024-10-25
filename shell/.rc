@@ -6,6 +6,7 @@ export DEBUGINFOD_PROGRESS=1
 
 # Aliases for distrobox
 alias dev="distrobox enter --root dev"
+alias evo="distrobox enter evologics"
 alias he="distrobox-host-exec"
 
 # If running in a distrobox container, try to execute missing commands on the host
