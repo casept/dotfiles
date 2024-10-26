@@ -140,6 +140,14 @@ if [ -d /data/data/com.termux ] && [ $(which termux-wake-lock) != "" ]; then
 	source ~/.bashrc_termux
 fi
 
+# Enable direnv hook if it exists
+function is_bin_in_path {
+  builtin type -P "$1" &> /dev/null
+}
+if is_bin_in_path direnv; then
+  eval "$(direnv hook bash)"
+fi
+
 # Hishtory Config
 if [ -d "$HOME/.hishtory" ]; then
   export PATH="$PATH:$HOME/.hishtory"
