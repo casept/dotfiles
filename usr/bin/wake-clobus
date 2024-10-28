@@ -1,0 +1,2 @@
+#!/usr/bin/env bash
+sudo wake em0 a0:8c:fd:d8:b6:48  
