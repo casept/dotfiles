@@ -121,3 +121,7 @@ fi
 if (( $+commands[starship] )); then
 	eval "$(starship init zsh)"
 fi
+
+# Hishtory Config:
+export PATH="$PATH:/home/casept/.hishtory"
+source /home/casept/.hishtory/config.zsh

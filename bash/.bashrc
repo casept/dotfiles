@@ -145,3 +145,7 @@ if [ -d "$HOME/.hishtory" ]; then
   export PATH="$PATH:$HOME/.hishtory"
   source ~/.hishtory/config.sh
 fi
+
+# Hishtory Config:
+export PATH="$PATH:/home/casept/.hishtory"
+source /home/casept/.hishtory/config.sh
