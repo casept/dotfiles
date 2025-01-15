@@ -142,7 +142,7 @@ fi
 
 # Enable direnv hook if it exists
 function is_bin_in_path {
-  builtin type -P "$1" &> /dev/null
+  which "$1" &> /dev/null
 }
 if is_bin_in_path direnv; then
   eval "$(direnv hook bash)"

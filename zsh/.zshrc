@@ -106,11 +106,9 @@ fi
 
 bindkey -v
 
-# Enable direnv integration if present
-
 # Enable direnv hook if it exists
 function is_bin_in_path {
-  builtin whence -P "$1" &> /dev/null
+  which "$1" &> /dev/null
 }
 if is_bin_in_path direnv; then
   eval "$(direnv hook zsh)"
