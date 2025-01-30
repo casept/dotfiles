@@ -1,0 +1,6 @@
+[default]
+# Default Ctrl-t conflicts with Konsole bind
+prefix-ctrl-key = e
+
+log = true
+log-directory = /home/casept/.cache
