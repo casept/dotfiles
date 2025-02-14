@@ -31,3 +31,9 @@ if [ -n "${ZSH_VERSION-}" ]; then
      command_not_found_handle "$@"
   }
 fi
+
+# Automatically log in tmux
+if [ "$TERM_PROGRAM" = tmux ]; then
+  echo "Logging!\n" >> ~/.tmux-logging
+  ~/bin/tmux_start_logging.sh
+fi
