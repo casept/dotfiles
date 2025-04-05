@@ -9,3 +9,5 @@ set debuginfod enabled on
 set history save on
 set print pretty on
 set pagination off
+
+alias gefload = source ~/.config/gdb/gef/gef.py

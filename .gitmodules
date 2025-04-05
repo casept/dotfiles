@@ -1,3 +1,6 @@
 [submodule "zsh/.oh-my-zsh"]
 	path = zsh/.oh-my-zsh
 	url = https://github.com/robbyrussell/oh-my-zsh
+[submodule "gdb/.config/gdb/gef"]
+	path = gdb/.config/gdb/gef
+	url = https://github.com/hugsy/gef.git
