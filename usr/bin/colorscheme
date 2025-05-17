@@ -10,6 +10,24 @@ function help() {
 	exit 1
 }
 
+function light_yakuake() {
+	for session in $(qdbus-qt6 "org.kde.yakuake" | grep /Sessions/); do
+		qdbus-qt6 "org.kde.yakuake" "$session" setProfile 'Konsole light'
+	done
+
+	sed -i "/DefaultProfile=/c\DefaultProfile=Konsole light.profile" ~/.config/yakuakerc
+	sed -i "/Skin=/c\Skin=ROUNDED" ~/.config/yakuakerc
+}
+
+function dark_yakuake() {
+	for session in $(qdbus-qt6 "org.kde.yakuake" | grep /Sessions/); do
+		qdbus-qt6 "org.kde.yakuake" "$session" setProfile 'Konsole dark'
+	done
+
+	sed -i "/DefaultProfile=/c\DefaultProfile=Konsole dark.profile" ~/.config/yakuakerc
+	sed -i "/Skin=/c\Skin=ROUNDED DARK" ~/.config/yakuakerc
+}
+
 function light_konsole() {
 	for pid in $(pidof konsole); do
 		for session in $(qdbus-qt6 "org.kde.konsole-$pid" | grep /Sessions/); do
@@ -49,6 +67,7 @@ function light() {
 	echo "light" > ~/.colorrc
 	# KDE plasma
 	lookandfeeltool -a org.kde.breeze.desktop
+	light_yakuake
 	light_konsole
 	light_helix
 }
@@ -57,6 +76,7 @@ function dark() {
 	# KDE plasma
 	lookandfeeltool -a org.kde.breezedark.desktop
 	echo "dark" > ~/.colorrc
+	dark_yakuake
 	dark_konsole
 	dark_helix
 }
