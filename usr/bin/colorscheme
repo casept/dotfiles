@@ -62,23 +62,47 @@ function dark_helix() {
 	pkill -USR1 helix
 }
 
+function plasma_fixup() {
+	# Switching the entire theme also changes window decorations, change them back
+  kwriteconfig6 --file kwinrc --group "org.kde.kdecoration2" --key library "bismuth_kdecoration"
+  kwriteconfig6 --file kwinrc --group "org.kde.kdecoration2" --key theme "Bismuth"
+}
+
+function plasma_light() {
+	lookandfeeltool -a org.kde.breeze.desktop
+	plasma_fixup
+}
+
+function plasma_dark() {
+	lookandfeeltool -a org.kde.breezedark.desktop
+	plasma_fixup
+}
+
+function plasma_fixup_2() {
+  # Tell kwin to reload it's configuration.
+  # This must be delayed long enough for the color switch to have happened,
+  # or some window elements will still be in the old theme for whatever reason.
+  sleep 15
+  qdbus-qt6 org.kde.KWin /KWin org.kde.KWin.reconfigure
+}
+
 
 function light() {
 	echo "light" > ~/.colorrc
-	# KDE plasma
-	lookandfeeltool -a org.kde.breeze.desktop
+	plasma_light
 	light_yakuake
 	light_konsole
 	light_helix
+	plasma_fixup_2
 }
 
 function dark() {
-	# KDE plasma
-	lookandfeeltool -a org.kde.breezedark.desktop
+	plasma_dark
 	echo "dark" > ~/.colorrc
 	dark_yakuake
 	dark_konsole
 	dark_helix
+	plasma_fixup_2
 }
 
 function toggle() {
