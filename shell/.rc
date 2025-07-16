@@ -37,3 +37,6 @@ if [ "$TERM_PROGRAM" = tmux ]; then
   echo "Logging!\n" >> ~/.tmux-logging
   ~/bin/tmux_start_logging.sh
 fi
+
+# Zed
+export ZED_WINDOW_DECORATIONS=server

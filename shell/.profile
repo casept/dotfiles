@@ -110,3 +110,6 @@ tmate-unpair() {
 if [ -d "$HOME/.cargo/env" ]; then
 	. "$HOME/.cargo/env"
 fi
+
+# Zed
+export ZED_WINDOW_DECORATIONS=server
