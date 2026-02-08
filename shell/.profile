@@ -33,7 +33,7 @@ fi
 export GOPATH=$HOME/go
 export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH:$HOME/usr/bin:$HOME/.cargo/bin:$GOPATH/bin:$HOME/.local/bin/"
-export EDITOR=helix
+export EDITOR=hx
 
 # Add crostool-ng cross compilers to PATH if present
 if [ -d ~/x-tools ]; then
