@@ -1,0 +1,84 @@
+#!/usr/bin/env bash
+
+set -euo pipefail
+
+# Adapted from https://dpc.pw/posts/bubblewrap-your-dev-env-and-agents/
+
+# Skip re-isolating if already inside an isolated environment
+if [[ -n "${ISOLATE_ENV:-}" ]]; then
+	>&2 echo "warning: already isolated"
+	exec "$@"
+fi
+
+tiocsti_path="/proc/sys/dev/tty/legacy_tiocsti"
+if [ ! -f "$tiocsti_path" ] || [ "$(cat "$tiocsti_path")" != "0" ]; then
+	>&2 echo "warning: TIOCSTI not disabled"
+fi
+
+args=()
+
+args+=(
+  --die-with-parent
+	--dev-bind /dev /dev \
+	--proc /proc \
+	--tmpfs /tmp \
+	--tmpfs /home \
+	--bind /run /run \
+ 	--setenv PROMPT_ENV_INDICATOR "isolated" \
+ 	--setenv ISOLATE_ENV "$(pwd)"
+)
+
+for p in \
+	/bin \
+	/lib \
+	/lib64 \
+	/sbin \
+	/usr \
+	/etc \
+	/nix \
+	"$HOME/bin/" \
+	"$HOME/.bashrc" \
+	"$HOME/.config/" \
+	"$HOME/.gitconfig" \
+	"$HOME/.nix-profile" \
+	"$HOME/.local/bin/" \
+	"$HOME/.local/share/direnv/allow/" \
+	"$HOME/.zshrc" \
+	"$HOME/.rc" \
+	"$HOME/.oh-my-zsh/" \
+	"$HOME/dev" \
+	; do
+	args+=(--ro-bind "$p" "$p")
+done
+
+for p in \
+	"$HOME/.cargo/" \
+	"$HOME/.claude/" \
+	"$HOME/.copilot/" \
+	"$HOME/.claude.json" \
+	"$HOME/.zsh_history" \
+	"$HOME/.hishtory" \
+	"$(pwd)"\
+	; do
+	args+=(--bind "$p" "$p")
+done
+
+args+=(--ro-bind "$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY" "$XDG_RUNTIME_DIR/$WAYLAND_DISPLAY")
+
+args+=(
+	--bind /dev/dri/ /dev/dri/ \
+	--bind /dev/shm /dev/shm \
+	--bind /tmp/.X11-unix/ /tmp/.X11-unix/ \
+)
+
+# Source extra config (e.g. set by auto-isolate) to allow
+# project-specific additions to args
+if [[ -n "${ISOLATE_EXTRA_CONFIG:-}" && -f "$ISOLATE_EXTRA_CONFIG" ]]; then
+	source "$ISOLATE_EXTRA_CONFIG"
+	# Hide the config file inside the sandbox by overlaying /dev/null
+	args+=(--ro-bind /dev/null "$ISOLATE_EXTRA_CONFIG")
+fi
+
+exec bwrap \
+	"${args[@]}" \
+	"$@"
