@@ -35,8 +35,7 @@ DISABLE_AUTO_UPDATE="true"
 # Uncomment the following line if pasting URLs and other text is messed up.
 # DISABLE_MAGIC_FUNCTIONS=true
 
-# Uncomment the following line to disable colors in ls.
-# DISABLE_LS_COLORS="true"
+DISABLE_LS_COLORS="true"
 
 # Uncomment the following line to disable auto-setting terminal title.
 # DISABLE_AUTO_TITLE="true"
@@ -68,8 +67,22 @@ DISABLE_AUTO_UPDATE="true"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(dircycle git gpg-agent gradle history jsontools pip pyenv python docker sudo rust golang vscode vagrant terraform web-search ansible archlinux mosh nmap systemd tmux tmuxinator rust vi-mode zsh-autosuggestions)
+plugins=(dircycle git gpg-agent gradle history python sudo rust golang vscode vagrant terraform web-search ansible archlinux mosh nmap systemd tmux tmuxinator vi-mode zsh-autosuggestions)
 export VI_MODE_SET_CURSOR=true
+ZSH_DISABLE_COMPFIX=true
+
+# One-shot wrapper: skip compaudit (-C) when the dump is <24h old
+autoload -Uz compinit
+compinit() {
+  unfunction compinit
+  autoload -Uz compinit
+  if [[ -n ${ZSH_COMPDUMP}(#qN.mh-24) ]]; then
+    compinit -C "$@"
+  else
+    compinit "$@"
+  fi
+}
+
 source $ZSH/oh-my-zsh.sh
 
 # User configuration
@@ -108,7 +121,7 @@ bindkey -v
 
 # Enable direnv hook if it exists
 function is_bin_in_path {
-  which "$1" &> /dev/null
+  (( $+commands[$1] ))
 }
 if is_bin_in_path direnv; then
   eval "$(direnv hook zsh)"
