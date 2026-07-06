@@ -148,8 +148,3 @@ if is_bin_in_path direnv; then
   eval "$(direnv hook bash)"
 fi
 
-# Hishtory Config
-if [ -d "$HOME/.hishtory" ]; then
-  export PATH="$PATH:$HOME/.hishtory"
-  source ~/.hishtory/config.sh
-fi
