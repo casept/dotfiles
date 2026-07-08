@@ -131,3 +131,7 @@ fi
 if (( $+commands[starship] )); then
 	eval "$(starship init zsh)"
 fi
+
+if is_bin_in_path atuin; then
+	eval "$(atuin init zsh --disable-up-arrow)"
+fi

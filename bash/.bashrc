@@ -148,3 +148,6 @@ if is_bin_in_path direnv; then
   eval "$(direnv hook bash)"
 fi
 
+if is_bin_in_path atuin; then
+  eval "$(atuin init bash --disable-up-arrow)"
+fi
