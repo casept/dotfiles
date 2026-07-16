@@ -23,7 +23,7 @@ def get_packages(directory):
 
     packages = list()
     for entry in os.listdir(directory):
-        if os.path.isdir(entry):
+        if os.path.isdir(os.path.join(directory, entry)):
             if entry not in IGNORED_DIRS:
                 packages.append(entry)
     return packages
