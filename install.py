@@ -41,8 +41,14 @@ def cleanup(directory):
     # Dry-run stow for all packages to find conflicts
     to_be_removed = list()
     packages = get_packages(directory)
+    # Matches the conflicting target path reported by stow on a failed
+    # (simulated) stow run. Supports both the older stow format
+    # ("existing target is neither a link nor a directory: <path>") and the
+    # stow 2.4+ format ("over existing target <path> since neither a link nor
+    # a directory").
     conflict_regex = re.compile(
-        r"(?:existing target is neither a link nor a directory:\s{1})(.*)"
+        r"(?:over existing target (\S+) since"
+        r"|existing target is neither a link nor a directory:\s+(\S+))"
     )
     for package in packages:
         # Use older subprocess functions for compat with python3 < 3.5
@@ -54,11 +60,12 @@ def cleanup(directory):
             )
         except subprocess.CalledProcessError as error:
             # Check if the error was caused by conflicts
-            if "existing target is neither a link nor a directory" in error.output:
+            matches = conflict_regex.findall(error.output)
+            if matches:
                 # Extract the matching paths and add them to list of files to
-                # be removed
-                conflicting_paths = conflict_regex.findall(error.output)
-                for path in conflicting_paths:
+                # be removed. Each match is a tuple (one group per alternative).
+                for groups in matches:
+                    path = next(g for g in groups if g)
                     to_be_removed.append(os.path.abspath(os.path.join(homedir, path)))
             else:
                 # Error wasn't caused by a conflict, re-raise the exception
