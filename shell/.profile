@@ -35,14 +35,6 @@ export PYENV_ROOT="$HOME/.pyenv"
 export PATH="$PYENV_ROOT/bin:$PATH:$HOME/usr/bin:$HOME/.cargo/bin:$GOPATH/bin:$HOME/.local/bin/"
 export EDITOR=hx
 
-# Add crostool-ng cross compilers to PATH if present
-if [ -d ~/x-tools ]; then
-	for dir in ~/x-tools/*; do
-		export PATH="$dir/bin":/$PATH
-	done
-fi
-
-
 # Prepare pyenv if installed
 if [ -x "$(command -v pyenv)" ]; then
 	eval "$(pyenv init -)"
