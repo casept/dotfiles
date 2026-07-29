@@ -117,6 +117,9 @@ if [ -f ~/.aliases ]; then
   . ~/.aliases
 fi
 
+export HISTSIZE=1000000000
+export SAVEHIST=1000000000
+
 bindkey -v
 
 # Enable direnv hook if it exists
