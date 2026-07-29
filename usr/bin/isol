@@ -57,7 +57,10 @@ for p in \
 	"$HOME/.copilot/" \
 	"$HOME/.claude.json" \
 	"$HOME/.zsh_history" \
-	"$HOME/.hishtory" \
+	"$HOME/.config/opencode/" \
+	"$HOME/.config/goose/" \
+	"$HOME/.local/share/opencode/" \
+	"$HOME/.local/share/goose/" \
 	"$(pwd)"\
 	; do
 	args+=(--bind "$p" "$p")
