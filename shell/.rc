@@ -40,3 +40,6 @@ fi
 
 # Zed
 export ZED_WINDOW_DECORATIONS=server
+
+# Claude
+alias eclaude="CLAUDE_CONFIG_DIR=~/.claude-evo claude"
